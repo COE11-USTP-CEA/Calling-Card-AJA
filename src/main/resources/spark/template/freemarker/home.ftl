@@ -53,17 +53,17 @@
 	<div id="page" class="container">
 		<div class="pboxA">
 			<h3>Jaypax</h3>
-			<p><img src="images/pic05.jpg" alt="" class="image image-left"/>Object Oriented Programing Instructor.</p>
+			<p><img src="https://avatars2.githubusercontent.com/u/5240924?v=3&s=400" width="120" height="120" alt="" class="image image-left"/>Object Oriented Programing Instructor.</p>
 			<a href="#" class="button">Customise</a>
 		</div>
 		<div class="pboxB">
 			<h3>Athenes</h3>
-			<p><img src="images/pic06.jpg" alt="" class="image image-left" />AJA!! Member.</p><br>
+			<p><img src="https://avatars3.githubusercontent.com/u/24226444?v=3&s=400" width="120" height="120" alt="" class="image image-left" />AJA!! Member.</p><br>
 			<a href="#" class="button">Customise</a>
 		</div>
 		<div class="pboxC">
 			<h3>Wacanam</h3>
-			<p><img src="images/pic07.jpg" alt="" class="image image-left" />Calling Card repository author.</p><br>
+			<p><img src="https://avatars3.githubusercontent.com/u/24250019?v=3&u=773828e84e30d6102a8e318840cf68e6f34e152c&s=400" width="120" height="120"" alt="" class="image image-left" />Calling Card repository author.</p><br>
 			<a href="#" class="button">Customise</a>
 		</div>
 	</div>
@@ -92,16 +92,16 @@
 		</div>
 		<div id="fbox2">
 			<h2>Calling Card web application developers</h2>
-			<p>The mission and vission of the team is to develop a web application called "Calling Card". Calling Card website is design to make phonebook and contact information in the form of contact directory.
-			This is a team base project for which we are incourage to develop cool and professional looking website. 
+			<p>The mission and vision of the team is to develop a web application called "Calling Card". The Calling Card website is design to make phonebook and contact information in the form of contact directory.
+			This is a team base project for which we are encourage to develop cool and professional looking website. 
 			Some of the pages is under construction.
-			Thank for visiting.</p>
+			Thank you for visiting.</p>
 			<ul class="style1">
-				<li><img src="images/pic01.jpg" width="120" height="120" alt="" /></li>
-				<li><img src="images/pic02.jpg" width="120" height="120" alt="" /></li>
-				<li><img src="images/pic03.jpg" width="120" height="120" alt="" /></li>
-				<li><img src="images/pic04.jpg" width="120" height="120" alt="" /></li>
-				<li><img src="images/pic08.jpg" width="120" height="120" alt="" /></li>
+				<li><img src="https://avatars3.githubusercontent.com/u/24250019?v=3&u=773828e84e30d6102a8e318840cf68e6f34e152c&s=400" width="120" height="120" alt="" /></li>
+				<li><img src="https://avatars3.githubusercontent.com/u/24226444?v=3&s=400" width="120" height="120" alt="" /></li>
+				<li><img src="https://scontent.fmnl8-1.fna.fbcdn.net/v/t34.0-12/16830472_779708545513412_520503177_n.jpg?oh=6bde6bf74a59a8522a3a554be56140e2&oe=58A8EB5A" width="120" height="120" alt="" /></li>
+				<li><img src="https://avatars0.githubusercontent.com/u/24411581?v=3&s=400" width="120" height="120" alt="" /></li>
+				<li><img src="https://avatars1.githubusercontent.com/u/24241804?v=3&s=400" width="120" height="120" alt="" /></li>
 			</ul>
 		</div>
 	</div>
@@ -109,7 +109,7 @@
 <div id="copyright">
 	<ul class="contact">
 		<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
-		<li><a href="#" class="icon icon-facebook"><span></span></a></li>
+		<li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
 		<li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
 		<li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
 		<li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
