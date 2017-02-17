@@ -36,7 +36,7 @@ public class Main {
             Map<String, Object> model = new HashMap<>();
             model.put("title","page3");
             model.put("message", "Page3");
-            return new ModelAndView(model, "page3.ftl"); // located in src/test/resources/spark/template/freemarker
+            return new ModelAndView(model, "page3.ftl"); // located in src/test/resources/spark/template/freemarker 
         }, new FreeMarkerEngine());
 		
 		get("/page4", (req, res) -> {
