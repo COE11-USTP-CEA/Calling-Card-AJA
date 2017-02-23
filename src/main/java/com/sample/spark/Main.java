@@ -14,7 +14,7 @@ public class Main {
 
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("title", "Calling Card");
+            model.put("title", "Home: Calling Card");
             return new ModelAndView(model, "home.ftl"); // located in src/main/resources/spark/template/freemarker
         }, new FreeMarkerEngine());
     }
