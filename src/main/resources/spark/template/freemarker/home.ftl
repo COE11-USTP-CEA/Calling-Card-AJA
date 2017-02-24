@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
+<title>${title}</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
@@ -16,7 +16,8 @@
 <body>
 <div id="header" class="container">
 	<div id="logo">
-		<h1><a href="#">CALLING CARD DIRECTORY</a></h1>
+		<a href="#"><img src="images/aja_logo.jpg" height="80" width="150"alt="" class="image image-logo"/></a>
+		<h1 class="logo-h1"><a href="#">CALLING CARD DIRECTORY</a></h1>
 	</div>
 	<div id="menu">
 		<ul>
