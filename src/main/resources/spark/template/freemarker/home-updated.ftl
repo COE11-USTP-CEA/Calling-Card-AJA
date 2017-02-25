@@ -21,10 +21,10 @@
 	<div id="menu">
 		<ul>
 			<li>
-			<form action="http://www.google.com/">
-				<input type="text" placeholder="Search a Card.." name="search" id="search">
-				<input type="submit" value="Go!" id="submit">
-			</form>
+				<form action="http://www.google.com/">
+					<input type="text" placeholder="Search a Card.." name="search" id="search">
+					<input type="submit" value="Go!" id="submit">
+				</form>
 			</li>
 			<li><a href="#" accesskey="2" title="">Phonebook</a></li>
 			<li><a href="/submit" accesskey="3" title="">Add Contacts</a></li>
@@ -38,17 +38,17 @@
 	<div id="banner" class="container">
 		<div class="boxA">
 			<h3>AMBRAY, WAVE CANTERY</h3>
-			<p>Address: Carmen, Cagayan de Oro, City</p>
+			<p>Address: Carmen, Cagayan de Oro City, Mis-Or</p>
 			<a href="#" class="button">CALL NOW</a>
 		</div>
 		<div class="boxB">
 			<h3>ABELLA, ATHENA LOUISSE</h3>
-			<p>Address: Gateway, Limketkai Drive CDO, City</p>
+			<p>Address: Gateway, Limketkai Drive CDO City, Mis-Or</p>
 			<a href="#" class="button">CALL NOW</a>
 		</div>
 		<div class="boxC">
 			<h3>CAGAS, ANGELA</h3>
-			<p>Address: Deluxe, Cogon CDO, City</p>
+			<p>Address: Deluxe, Cogon CDO City, Mis-Or</p>
 			<a href="#" class="button">CALL NOW</a>
 		</div>
 	</div>
@@ -78,7 +78,13 @@
 		<div id="fbox1">
 			<h2>Recently Added Contacts</h2>
 			<ul class="style3">
-				
+				<li class="first">
+					<p class="date"><a href="#">XXX<b>xx</b></a></p>
+					<h3>${firstname+" "+middlename+" "+lastname}</h3>
+					<p>${"Address: "+street+" "+city+", "+province+"."}</p>
+					<p>${"Tel: "+tel}</p>
+					<p>${"Mobile: "+mobile}</p>
+				</li>
 			</ul>
 		</div>
 		<div id="fbox2">
