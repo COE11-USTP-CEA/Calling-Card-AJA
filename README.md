@@ -1,16 +1,17 @@
-# demospark
-Demo app for SparkJava
+#Calling Card webpage by Aja
 
-## TO BEGIN
-1. Install and configure Maven
-2. Clone this repo
-3. Run "mvn install" -> This is a compile + build command
+##Program Description
 
-## TO Run
-Assuming your "mvn install" command was a success
-1. Run "mvn exec:java" 
-2. In a browser, open http://localhost:4567/hello 
+      Calling Card Directory is a webpage that displays contact information of 
+      any individual who are signed in the page. It contains the person's information 
+      such as address, contact number, email , etc.. With the help of this webpage
+      you can be connected with the world.
 
-## Might be useful
-* mvn clean -> deletes previously compiled sources
-* mvn compile -> just compiles the sources
+##Team Members
+
+      Wave Cantery Ambray
+      Athena Llouesse Abella
+      xxxxxx xxxxxx xxxx
+      xxxxx xxxx xxxx
+ 
+      
