@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>${title}</title>
+<title>updated</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
@@ -73,7 +73,13 @@
 		<div id="fbox1">
 			<h2>Recently Added Contacts</h2>
 			<ul class="style3">
-				
+				<li class="first">
+					<p class="date"><a href="#">FEB<b>17</b></a></p>
+					<h3>${firtsname+" "+middlename+" "+lastname}</h3>
+					<p>${"Address: "+street+" "+city+", "+province+"."}</p>
+					<p>${"Tel: "+tel}</p>
+					<p>${"Mobile: "+mobile}</p>
+				</li>
 			</ul>
 		</div>
 		<div id="fbox2">
