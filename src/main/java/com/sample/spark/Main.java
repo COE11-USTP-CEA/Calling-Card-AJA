@@ -14,19 +14,24 @@ public class Main {
 
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
+            
             model.put("title", "Home: Calling Card");
+
             return new ModelAndView(model, "home.ftl"); // located in src/main/resources/spark/template/freemarker
         }, new FreeMarkerEngine());
 
         get("/submit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
+
             model.put("title", "Add Contact");
+            
             return new ModelAndView(model, "submit.ftl");
         }, new FreeMarkerEngine());
 
         post("/submit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             String firstname, lastname, middlename, street, city, prov, tel, mobile;
+
             firstname = req.queryParams("firstname");
             lastname = req.queryParams("lastname");
             middlename = req.queryParams("middlename");

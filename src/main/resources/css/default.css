@@ -210,7 +210,7 @@
 		width: 100%;
 		height: 100%;
 		border-radius: 6px;
-		background: url(/bg01.png) repeat;
+		background: url(images/bg01.png) repeat;
 	}
 	
 	ul.style3 .date b
@@ -332,9 +332,10 @@
 	.boxB,
 	.boxC
 	{
-		background: #FFF;
+		background: rgba(255, 255, 255, 0.34);
 		width: 304px;
-		padding: 40px 40px;
+		padding: 40px 40px
+
 	}
 
 	.boxA,
@@ -379,8 +380,9 @@
 
 	#header
 	{
-		position: relative;
+		position: fixed;
 		padding: 3em 0em;
+    		background-color: rgba(209, 207, 206, 0.68);
 	}
 
 /*********************************************************************************/
@@ -414,6 +416,7 @@
 		position: absolute;
 		top: 2em;
 		right: 0;
+    	
 	}
 	
 	#menu ul
@@ -461,7 +464,7 @@
 	{
 		overflow: hidden;
 		padding: 10em 0em 3em 0em;
-		background: url(/bg01.jpg) no-repeat center top;
+		background: url(images/bg01.jpg) no-repeat center top;
 		background-size: 100% auto;
 	}
 	
@@ -616,4 +619,24 @@
 	.color
 	{
 		color: #555;
+	}
+	#search
+	{
+		width: 300px;
+		padding: 7px;
+		border: 1px solid #607d8b
+	}
+	#submit
+	{
+		padding: 7px;
+		background: #607d8b;
+		border: 1px solid #607d8b;
+		color: white;
+		margin-left: -5px;
+		cursor: pointer;
+	}
+	#submit:hover
+	{
+		background: #333;
+		transition: all 0.40s;
 	}

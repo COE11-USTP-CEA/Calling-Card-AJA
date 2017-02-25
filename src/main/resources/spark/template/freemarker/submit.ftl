@@ -13,10 +13,11 @@
 <form method="post" action="/submit">
 	<label>Full Name</label>
 	<br>
-	<input type="text" placeholder="First Name" name="firstname"/>
-	<input type="text" placeholder="Last Name" name="lastname"/>
-	<input type="text" placeholder="Middle Name" name="middlename"/>
-	<br>
+	<div>
+		<input type="text" placeholder="First Name" name="firstname"/>
+		<input type="text" placeholder="Last Name" name="lastname"/>
+		<input type="text" placeholder="Middle Name" name="middlename"/>
+	</div>
 	<label>Address</label>
 	<br>
 	<input type="text" placeholder="Street line" name="street"/>
@@ -28,7 +29,7 @@
 	<input type="text" placeholder="Telephone" name="telephone"/>
 	<input type="text" placeholder="Mobile" name="mobile"/>
 	<br>
-	<input type="submit" value="submit"/>
+	<input type="submit" value="submit" id="submit"/>
 </form>
 
 </div>
