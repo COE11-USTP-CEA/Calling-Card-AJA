@@ -34,17 +34,17 @@
 		<div class="boxA">
 			<h3>AMBRAY, WAVE CANTERY</h3>
 			<p>Address: Carmen, Cagayan de Oro, City</p>
-			<a href="#" class="button">MORE INFO</a>
+			<a href="#" class="button">CALL NOW</a>
 		</div>
 		<div class="boxB">
 			<h3>ABELLA, ATHENA LOUISSE</h3>
 			<p>Address: Gateway, Limketkai Drive CDO, City</p>
-			<a href="#" class="button">MORE INFO</a>
+			<a href="#" class="button">CALL NOW</a>
 		</div>
 		<div class="boxC">
 			<h3>CAGAS, ANGELA</h3>
 			<p>Address: Deluxe, Cogon CDO, City</p>
-			<a href="#" class="button">MORE INFO</a>
+			<a href="#" class="button">CALL NOW</a>
 		</div>
 	</div>
 </div>

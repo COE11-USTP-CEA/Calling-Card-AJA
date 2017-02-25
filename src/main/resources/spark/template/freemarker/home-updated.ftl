@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>updated</title>
+<title>${title}</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
@@ -33,18 +33,18 @@
 	<div id="banner" class="container">
 		<div class="boxA">
 			<h3>AMBRAY, WAVE CANTERY</h3>
-			<p>Address: Carmen, Cagayan de Oro, City</p>
-			<a href="#" class="button">MORE INFO</a>
+			<p>Address: Carmen, Cagayan de Oro City, Mis-Or</p>
+			<a href="#" class="button">CALL NOW</a>
 		</div>
 		<div class="boxB">
 			<h3>ABELLA, ATHENA LOUISSE</h3>
-			<p>Address: Gateway, Limketkai Drive CDO, City</p>
-			<a href="#" class="button">MORE INFO</a>
+			<p>Address: Gateway, Limketkai Drive CDO City, Mis-Or</p>
+			<a href="#" class="button">CALL NOW</a>
 		</div>
 		<div class="boxC">
 			<h3>CAGAS, ANGELA</h3>
-			<p>Address: Deluxe, Cogon CDO, City</p>
-			<a href="#" class="button">MORE INFO</a>
+			<p>Address: Deluxe, Cogon CDO City, Mis-Or</p>
+			<a href="#" class="button">CALL NOW</a>
 		</div>
 	</div>
 </div>
@@ -74,8 +74,8 @@
 			<h2>Recently Added Contacts</h2>
 			<ul class="style3">
 				<li class="first">
-					<p class="date"><a href="#">FEB<b>17</b></a></p>
-					<h3>${firtsname+" "+middlename+" "+lastname}</h3>
+					<p class="date"><a href="#">XXX<b>xx</b></a></p>
+					<h3>${firstname+" "+middlename+" "+lastname}</h3>
 					<p>${"Address: "+street+" "+city+", "+province+"."}</p>
 					<p>${"Tel: "+tel}</p>
 					<p>${"Mobile: "+mobile}</p>

@@ -26,8 +26,8 @@ public class Main {
 
         post("/submit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            String firtsname, lastname, middlename, street, city, prov, tel, mobile;
-            firtsname = req.queryParams("firtsname");
+            String firstname, lastname, middlename, street, city, prov, tel, mobile;
+            firstname = req.queryParams("firstname");
             lastname = req.queryParams("lastname");
             middlename = req.queryParams("middlename");
             street = req.queryParams("street");
@@ -36,7 +36,8 @@ public class Main {
             tel = req.queryParams("telephone");
             mobile = req.queryParams("mobile");
 
-            model.put("firtsname", firtsname);
+            model.put("title", "UPDATED: Calling Card");
+            model.put("firstname", firstname);
             model.put("lastname", lastname);
             model.put("middlename", middlename);
             model.put("street", street);

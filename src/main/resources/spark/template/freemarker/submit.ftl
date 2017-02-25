@@ -13,7 +13,7 @@
 <form method="post" action="/submit">
 	<label>Full Name</label>
 	<br>
-	<input type="text" placeholder="Firts Name" name="firtsname"/>
+	<input type="text" placeholder="First Name" name="firstname"/>
 	<input type="text" placeholder="Last Name" name="lastname"/>
 	<input type="text" placeholder="Middle Name" name="middlename"/>
 	<br>
