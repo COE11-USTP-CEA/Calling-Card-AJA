@@ -30,7 +30,7 @@ public class Main {
 
         post("/submit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            String firstname, lastname, middlename, street, city, prov, tel, mobile;
+            String firstname, lastname, middlename, street, city, prov, tel, mobile, email;
 
             firstname = req.queryParams("firstname");
             lastname = req.queryParams("lastname");
@@ -40,6 +40,7 @@ public class Main {
             prov = req.queryParams("province");
             tel = req.queryParams("telephone");
             mobile = req.queryParams("mobile");
+            email = req.queryParams("email");
 
             model.put("title", "UPDATED: Calling Card");
             model.put("firstname", firstname);
@@ -50,6 +51,7 @@ public class Main {
             model.put("province", prov);
             model.put("tel", tel);
             model.put("mobile", mobile);
+            model.put("email", email);
 
             return new ModelAndView(model, "home-updated.ftl"); // located in src/main/resources/spark/template/freemarker
         }, new FreeMarkerEngine());

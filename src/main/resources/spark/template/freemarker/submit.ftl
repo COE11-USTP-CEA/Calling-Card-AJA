@@ -51,6 +51,10 @@
 				<input type="text" placeholder="Telephone" name="telephone"/>
 				<input type="text" placeholder="Mobile" name="mobile"/>
 				<br>
+				<label>Email</label>
+				<br>
+				<input type="text" placeholder="Email add" name="email"/>
+				<br>
 				<input type="submit" value="submit" id="submit"/>
 		</form>
 

@@ -13,22 +13,23 @@
 
 </head>
 <body>
-<div id="header" class="container"style="padding-right: 63px;">
+<div id="header" class="container">
 	<div id="logo">
-		<a href="#"><img src="images/aja_logo.jpg" height="80" width="150"alt="" class="image image-logo"/></a>
-		<h1 class="logo-h1"><a href="#">CALLING CARD DIRECTORY</a></h1>
+		<a href="/"><img src="images/aja_logo.png" height="80" width="150"alt="" class="image image-logo"/></a>
+		<h1 class="logo-h1"><a href="/">CALLING CARD DIRECTORY</a></h1>
 	</div>
 	<div id="menu">
+		<form action="http://www.google.com/" id="menu" style="margin-right: 10px;">
+				<input type="text" placeholder="Search a Card.." name="search" id="search">
+				<input type="submit" value="Go!" id="submit">
+		</form>
 		<ul>
-			<li>
-				<form action="http://www.google.com/">
-					<input type="text" placeholder="Search a Card.." name="search" id="search">
-					<input type="submit" value="Go!" id="submit">
-				</form>
-			</li>
+			<br>
+			<br>
+			<br>
 			<li><a href="#" accesskey="2" title="">Phonebook</a></li>
 			<li><a href="/submit" accesskey="3" title="">Add Contacts</a></li>
-			<li><a href="#" accesskey="4" title="">About Us</a></li>
+			<li><a href="/about_us" accesskey="4" title="">About Us</a></li>
 			<li><a href="#" accesskey="5" title="">Contact Us</a></li>
 		</ul>
 	</div>
@@ -82,6 +83,7 @@
 					<p class="date"><a href="#">XXX<b>xx</b></a></p>
 					<h3>${firstname+" "+middlename+" "+lastname}</h3>
 					<p>${"Address: "+street+" "+city+", "+province+"."}</p>
+					<p>${"Email: "+email}</p>
 					<p>${"Tel: "+tel}</p>
 					<p>${"Mobile: "+mobile}</p>
 				</li>
