@@ -55,7 +55,7 @@
 	{
 		overflow: hidden;
 		margin: 0em auto;
-		width: 1200px;
+		width: 100%;
 	}
 	
 /*********************************************************************************/
@@ -382,7 +382,7 @@
 	{
 		position: fixed;
 		padding: 3em 0em;
-    		background-color: rgba(209, 207, 206, 0.68);
+    	background-color: rgba(238, 238, 238, 0.35);
 	}
 
 /*********************************************************************************/
@@ -414,7 +414,7 @@
 	#menu
 	{
 		position: absolute;
-		top: 2em;
+		top: 10px;
 		right: 0;
     	
 	}
@@ -620,11 +620,15 @@
 	{
 		color: #555;
 	}
+	.align-search-bar
+	{
+		text-align: left;
+	}
 	#search
 	{
-		width: 300px;
+		width: 425px;
 		padding: 7px;
-		border: 1px solid #607d8b
+		border: 1px solid #607d8b;
 	}
 	#submit
 	{
@@ -639,4 +643,10 @@
 	{
 		background: #333;
 		transition: all 0.40s;
+	}
+	.submit-header
+	{
+		position: static;
+		padding: 7em 0em;
+    	background-color: rgba(238, 238, 238, 0.35);
 	}

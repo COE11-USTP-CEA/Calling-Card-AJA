@@ -54,6 +54,13 @@ public class Main {
             return new ModelAndView(model, "home-updated.ftl"); // located in src/main/resources/spark/template/freemarker
         }, new FreeMarkerEngine());
 
+        get("/about_us", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+                
+                model.put("title", "About us: Calling Card");
+
+                return new ModelAndView(model, "about us.ftl"); // located in src/main/resources/spark/template/freemarker
+            }, new FreeMarkerEngine());
     }
 }
  
