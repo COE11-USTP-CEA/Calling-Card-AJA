@@ -48,15 +48,9 @@
 		</div>
 		<div class="boxC">
 			<h3>CAGAS, ANGELA</h3>
-	                <p>Address: Deluxe, Cogon CDO, City</p>
-	                <a href="#" class="button">CALL NOW</a>
-	        </div>
-	        <div class="boxD">
-                        <h3>CUTAB, LEMERSON JAN</h3>
-                        <p>Address: Vaminta Boulevard, Carmen, Cagayan de Oro, City</p>
-                        <a href="#" class="button">CALL NOW</a>
-                </div>
-                <div class="boxE">
+			<p>Address: Deluxe, Cogon CDO City, Mis-Or</p>
+			<a href="#" class="button">CALL NOW</a>
+		</div>
 	</div>
 </div>
 <h2 class="center-up color">RECENTLY CONTACT</h2> 
