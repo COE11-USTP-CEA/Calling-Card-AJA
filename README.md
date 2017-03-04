@@ -7,19 +7,35 @@
       such as address, contact number, email , etc.. With the help of this webpage
       you can be connected with the world
       
-##How to run Maven
+##How to install Maven
 
-*Download and install java [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-*Create system variable for java development kit(jdk)
+* Download and install java [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* Create user variable for java development kit(jdk)
 
-            path=%path%;<paste the file path of your java development kit(jdk) here>
+      path=%path%;<paste the file path of your java development kit(jdk) bin>
+      e.g - C:\Program Files\Java\jdk1.8.0_111\bin
  
- *Download [apache-maven](http://maven.apache.org/download.cgi)
- *Create system variable for maven
+ * Download [apache-maven](http://maven.apache.org/download.cgi)
+ * Create user variable for maven
 
-      path=%path%;<paste the file path of your apache-maven here>
+      path=%path%;<paste the file path of your apache-maven bin>
+      e.g - C:\Program Files\Maven\apache-maven-3.3.9\bin\
       
- For [here](http://maven.apache.org/install.html) for more info
+ * Download [apache-maven](http://maven.apache.org/download.cgi)
+ * Create system variable for maven
+      
+      echo=%JAVA_HOME%
+      path=%JAVA_HOME%;<paste the file path of your apache-maven here>
+      e.g - C:\Program Files\Java\jdk1.8.0_111
+      
+ * Verify
+      
+      java
+      javac
+      mvn -v
+      
+      
+Visit [Maven](http://maven.apache.org/install.html) for more info
 
 ##Routes
 
