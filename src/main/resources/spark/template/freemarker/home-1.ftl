@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -27,9 +27,9 @@
 			<br>
 			<br>
 			<br>
-			<li><a href="#" accesskey="2" title="">Phonebook</a></li>
-			<li><a href="/submit" accesskey="3" title="">Add Contacts</a></li>
-			<li><a href="/about_us" accesskey="4" title="">About Us</a></li>
+			<li><a href="/phonebook" accesskey="2" title="">Phonebook</a></li>
+			<li><a href="/add" accesskey="3" title="">Add Contacts</a></li>
+			<li><a href="/about" accesskey="4" title="">About Us</a></li>
 			<li><a href="#" accesskey="5" title="">Contact Us</a></li>
 		</ul>
 	</div>
@@ -39,17 +39,17 @@
 	<div id="banner" class="container">
 		<div class="boxA">
 			<h3>AMBRAY, WAVE CANTERY</h3>
-			<p>Address: Carmen, Cagayan de Oro City, Mis-Or</p>
+			<p>Address: Carmen, Cagayan de Oro, City</p>
 			<a href="#" class="button">CALL NOW</a>
 		</div>
 		<div class="boxB">
 			<h3>ABELLA, ATHENA LOUISSE</h3>
-			<p>Address: Gateway, Limketkai Drive CDO City, Mis-Or</p>
+			<p>Address: Gateway, Limketkai Drive CDO, City</p>
 			<a href="#" class="button">CALL NOW</a>
 		</div>
 		<div class="boxC">
 			<h3>CAGAS, ANGELA</h3>
-			<p>Address: Deluxe, Cogon CDO City, Mis-Or</p>
+			<p>Address: Deluxe, Cogon CDO, City</p>
 			<a href="#" class="button">CALL NOW</a>
 		</div>
 	</div>
@@ -71,37 +71,6 @@
 			<h3>Wacanam</h3>
 			<p><img src="images/pic07.jpg" width="120" height="120"" alt="" class="image image-left" />Calling Card repository author.</p><br>
 			<a href="#" class="button">Customise</a>
-		</div>
-	</div>
-</div>
-<div id="footer-wrapper">
-	<div id="footer" class="container">
-		<div id="fbox1">
-			<h2>Recently Added Contacts</h2>
-			<ul class="style3">
-				<li class="first">
-					<p class="date"><a href="#">XXX<b>xx</b></a></p>
-					<h3>${firstname+" "+middlename+" "+lastname}</h3>
-					<p>${"Address: "+street+" "+city+", "+province+"."}</p>
-					<p>${"Email: "+email}</p>
-					<p>${"Tel: "+tel}</p>
-					<p>${"Mobile: "+mobile}</p>
-				</li>
-			</ul>
-		</div>
-		<div id="fbox2">
-			<h2>Calling Card web application developers</h2>
-			<p>The mission and vision of the team is to develop a web application called "Calling Card". The Calling Card website is design to make phonebook and contact information in the form of contact directory.
-			This is a team base project for which we are encourage to develop cool and professional looking website. 
-			Some of the pages is under construction.
-			Thank you for visiting.</p>
-			<ul class="style1">
-				<li><img src="images/pic01.jpg" width="120" height="120" alt="" /></li>
-				<li><img src="images/pic02.jpg" width="120" height="120" alt="" /></li>
-				<li><img src="images/pic03.jpg" width="120" height="120" alt="" /></li>
-				<li><img src="images/pic04.jpg" width="120" height="120" alt="" /></li>
-				<li><img src="images/pic08.jpg" width="120" height="120" alt="" /></li>
-			</ul>
 		</div>
 	</div>
 </div>

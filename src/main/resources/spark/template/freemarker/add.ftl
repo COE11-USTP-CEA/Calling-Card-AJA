@@ -23,16 +23,16 @@
 			<br>
 			<br>
 			<br>
-			<li><a href="#" accesskey="2" title="">Phonebook</a></li>
-			<li><a href="/submit" accesskey="3" title="">Add Contacts</a></li>
-			<li><a href="/about_us" accesskey="4" title="">About Us</a></li>
+			<li><a href="/phonebook" accesskey="2" title="">Phonebook</a></li>
+			<li><a href="/add" accesskey="3" title="">Add Contacts</a></li>
+			<li><a href="/about" accesskey="4" title="">About Us</a></li>
 			<li><a href="#" accesskey="5" title="">Contact Us</a></li>
 		</ul>
 	</div>
 </div>
 <div class="center-up submit-header">
 	<div>
-		<form method="post" action="/submit">
+		<form method="post" action="/add">
 			<label>Full Name</label>
 			<br>
 			
