@@ -8,17 +8,18 @@
       you can be connected with the world
       
 ##How to run Maven
-*Download and install java here(http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+
+*Download and install java [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 *Create system variable for java development kit(jdk)
 
-      path=%path%;<paste the file path of your java development kit(jdk) here>
+            path=%path%;<paste the file path of your java development kit(jdk) here>
  
-*Download apache-maven here(http://maven.apache.org/download.cgi)
-*Create system variable for maven
+ *Download [apache-maven](http://maven.apache.org/download.cgi)
+ *Create system variable for maven
 
       path=%path%;<paste the file path of your apache-maven here>
       
-      For here(http://maven.apache.org/install.html) for more info
+ For [here](http://maven.apache.org/install.html) for more info
 
 ##Routes
 
