@@ -1,4 +1,4 @@
-#Calling Card webpage by Aja
+#Calling Card web application by Aja
 
 ##Program Description
 
@@ -19,7 +19,7 @@
 * Create system variable JAVA_HOME
       
             echo=%JAVA_HOME%
-            path=%JAVA_HOME%;<paste the file path of your apache-maven here>
+            path=%JAVA_HOME%;<paste the file path of your java here>
             e.g -  path=%JAVA_HOME%;C:\Program Files\Java\jdk1.8.0_111
       
 * Create user variable for maven
