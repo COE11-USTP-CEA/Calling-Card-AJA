@@ -112,7 +112,7 @@
                 <i class="fa fa-lastfm fa-4x"></i>
 									<h4>Quality</h4>
 									<p >
-										Aja Calling Card Directory gives you a much better quality than traditional calling cards. It does not only have better quality but also it globally and friendly site.
+										Aja Calling Card Directory gives you a much better quality than traditional calling cards. it is also a friendly site.
 									</p>
                       </div>
             </div>
