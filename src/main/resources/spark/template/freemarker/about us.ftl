@@ -46,7 +46,7 @@
       <p>The responsible of web page source code...</p>
     </div>
     <div class="col-sm-4">
-      <h3>Athena Lloussa Abella</h3>
+      <h3>Athena Louisse Abella</h3>
       <p>The Photoshop...</p>
       <p>The responsible of photo lay-out and design...</p>
     </div>
@@ -82,8 +82,7 @@
 		<div>
 			<h2>Calling Card web application developers</h2>
 			<p>The mission and vision of the team is to develop a web application called "Calling Card". The Calling Card website is design to make phonebook and contact information in the form of contact directory.
-			This is a team base project for which we are encourage to develop cool and professional looking website. 
-			Some of the pages is under construction.
+This is a team base project for which we are encourage to develop cool and professional looking website. Our website is your number one choice for all of your international prepaid calling cards needs. Our company has been delivering outstanding quality and reliability within the prepaid telecommunications industry. Our company comprise the most effective and advanced technologies regarding long distance calls and mobile phones which allow us to offer affordable and superb connection worldwide.
 			Thank you for visiting.</p>
 			<ul class="style1">
 				<li><img src="images/pic01.jpg" width="120" height="120" alt="" /></li>

@@ -48,7 +48,7 @@ Visit [Maven](http://maven.apache.org/install.html) for more info
 ##Team Members
 
       Wave Cantery Ambray
-      Athena Llouesse Abella
+      Athena Louisse Abella
       Lemerson Jan Cutab
       Jefford Andoy
       xxxxx xxxx xxxx

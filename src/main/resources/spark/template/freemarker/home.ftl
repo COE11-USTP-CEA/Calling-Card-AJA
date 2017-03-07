@@ -110,9 +110,9 @@
 
               
                 <i class="fa fa-lastfm fa-4x"></i>
-									<h4>About the project #1</h4>
+									<h4>Quality</h4>
 									<p >
-										Write a decription here.......
+										Aja Calling Card Directory gives you a much better quality than traditional calling cards. It does not only have better quality but also it globally and friendly site.
 									</p>
                       </div>
             </div>
@@ -121,9 +121,11 @@
 
               
                 <i class="fa fa-yelp fa-4x"></i>
-									<h4>About the project #2</h4>
+									<h4>Simplicity</h4>
 									<p >
-										Write a description here....
+										 It is easy to stay in control of your calling in our app or on the web. Unlike with traditional calling cards, we will never leave you guessing about how it really works. Be in control of your calling
+
+ It is important that you feel like you are in charge. That is why we make it easy for you to access your calling information and active subscriptions.
                       </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -131,9 +133,9 @@
 
               
                 <i class="fa fa-ioxhost fa-4x"></i>
-									<h4>About the project #3</h4>
+									<h4>It is FREE</h4>
 									<p >
-										Write a decription here.......
+										This webpage allows you to search information about any individual. We also provide a add contact page for you to add your own calling information for FREE.
 									</p>
                       </div>
             </div>
@@ -145,7 +147,7 @@
       <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-             <h1 class="tag-home">  Say something about the team Athena.........................................................................................</h1> 
+             <h1 class="tag-home">B R E A K I N G --- B E Y O N D --- B O R D E R S</h1> 
                <hr />
                  </div>
             </div>
@@ -162,33 +164,33 @@
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="just-txt-div">
-                  <strong> NAME</strong> 
+                  <strong> WAVE</strong> 
                     <p>
-                        SURNAME
+                        AMBRAY
                     </p>
                 </div>
                 </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="just-txt-div">
-                  <strong> NAME</strong> 
+                  <strong> ATHENA</strong> 
                     <p>
-                        SURNAME
+                        ABELLA
                     </p>
                 </div>
                 </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="just-txt-div">
-                  <strong> NAME</strong> 
+                  <strong> JEFFORD</strong> 
                     <p>
-                        SURNAME
+                        ANDOY
                     </p>
                 </div>
                 </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="just-txt-div">
-                  <strong> NAME</strong> 
+                  <strong> ANGELA</strong> 
                     <p>
-                        SURNAME
+                        CAGAS
                     </p>
                 </div>
                 </div>
@@ -332,10 +334,9 @@
              <div class="row">
             <div class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-12 set-div">
                 <div class="just-txt-div text-center">
-                    <h3><strong>-- Maybe about the project --</strong> </h3>
+                    <h3><strong>-- AJA Corporation --</strong> </h3>
                     <p>
-                         write someting here Athena....
-                         ikaw na bahala dre nga part........ 
+                         Being at the forefront of the prepaid telecommunications industry, Aja calling card directory has established itself as the innovative market leader and has nurtured relationships with tier one carriers helping to provide extraordinary quality and service. With communication facilities located all around the world, the company is able to provide exceptional long distance service at a fraction of the cost. With an unmatched portfolio of telecommunications products and services, Aja calling card directory is continuing its legacy of leadership and innovation into the 21st century and beyond. 
                       <br /><br />
                     </p>
                       <a class="btn btn-info btn-lg" href="/login">GET STARTED</a>
@@ -356,8 +357,7 @@
               
 									<h3> <strong>ABOUT OOP</strong> </h3>
 									<p style="padding-right:50px;" >
-										ANY WORF TO SAY.
-                                        ANY WORF TO SAY.
+										    Object-oriented programming (OOP) is a programming language model organized around objects rather than "actions" and data rather than logic. Historically, a program has been viewed as a logical procedure that takes input data, processes it, and produces output data. This webpage serves as an actual project of OOP where we applied what we learned about the subject.
                                                                             
 									</p>
             </div>
