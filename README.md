@@ -4,8 +4,8 @@
 
       Calling Card Directory is a webpage that displays contact information of 
       any individual who are signed in the page. It contains the person's information 
-      such as address, contact number, email , etc.. With the help of this webpage
-      you can be connected with the world
+      such as address, contact number, email , etc.. With the help of this webpage,
+      you can be connected with the world.
       
 ##How to install Maven
 
@@ -42,7 +42,7 @@ Visit [Maven](http://maven.apache.org/install.html) for more info
       localhost:4567 - landing page
       localhost:4567/add - adding contact info form
       localhost:4567/view - view all added contacts
-      localhost:4567/phonebook - phonebook (expiremental)
+      localhost:4567/phonebook - phonebook (experimental)
       localhost:4567/about - team and project informations
 
 ##Team Members
