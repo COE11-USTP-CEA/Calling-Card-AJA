@@ -51,7 +51,7 @@ Visit [Maven](http://maven.apache.org/install.html) for more info
       Athena Llouesse Abella
       Lemerson Jan Cutab
       Jefford Andoy
-      xxxxx xxxx xxxx
+      Angela Cagas
       
  
       
