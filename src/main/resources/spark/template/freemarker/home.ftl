@@ -216,7 +216,7 @@
                 <i class="fa fa-exchange fa-3x"></i>
 									<h4>Feature #1</h4>
 									<p >
-										Describe here.....
+										Aja Calling Card is surely convenient, fast and hassle-free(Total Convenience).
 									</p>
                    
                       </div>
@@ -228,7 +228,7 @@
                 <i class="fa fa-key fa-3x"></i>
 									<h4>Feature #2</h4>
 									<p >
-										Describe here.....
+										Aja Calling card ensures 100% Dedicated Customer Support.
 									</p>
                     
                       </div>
