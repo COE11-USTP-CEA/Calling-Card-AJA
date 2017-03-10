@@ -12,7 +12,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div id="header" class="container">
+<div id="header" class="container" style="position: static'>
 	<div id="logo">
 		<a href="/"><img src="images/aja_logo.png" height="80" width="150"alt="" class="image image-logo"/></a>
 		<h1 class="logo-h1"><a href="/">CALLING CARD DIRECTORY</a></h1>
@@ -27,7 +27,7 @@
 			<br>
 			<br>
 			<li><a href="/phonebook" accesskey="2" title="">Phonebook</a></li>
-			<li><a href="/submit" accesskey="3" title="">Add Contacts</a></li>
+			<li><a href="/add" accesskey="3" title="">Add Contacts</a></li>
 			<li><a href="/about" accesskey="4" title="">About Us</a></li>
 			<li><a href="#" accesskey="5" title="">Contact Us</a></li>
 		</ul>
