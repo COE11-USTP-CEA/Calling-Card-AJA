@@ -2,7 +2,7 @@
 
 ##Program Description
 
-      Calling Card Directory is a webpage that displays contact information of 
+      Calling Card Directory is a web application that displays contact information of 
       any individual who are signed in the page. It contains the person's information 
       such as address, contact number, email , etc.. With the help of this webpage
       you can be connected with the world
@@ -51,7 +51,4 @@ Visit [Maven](http://maven.apache.org/install.html) for more info
       Athena Louisse Abella
       Lemerson Jan Cutab
       Jefford Andoy
-      xxxxx xxxx xxxx
-      
- 
-      
+      Angela Cagas
