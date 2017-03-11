@@ -44,6 +44,8 @@ Visit [Maven](http://maven.apache.org/install.html) for more info
       localhost:4567/view - view all added contacts
       localhost:4567/phonebook - phonebook (expiremental)
       localhost:4567/about - team and project informations
+      localhost:4567/delete - delete form
+      localhost:4567/delete/"" - parameterized delete route
 
 ##Team Members
 
