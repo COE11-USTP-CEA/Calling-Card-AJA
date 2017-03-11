@@ -9,6 +9,7 @@
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 
+
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
 </head>
@@ -77,7 +78,6 @@
 <h2 class="center-up">Recently Added Contacts</h2>
 <p class="center-up">Click the button to sort the list ascending (A to Z):</p>
 <p class="center-up">Click again to sort the list descending (Z to A):</p>
-			
 <div id="footer-wrapper">
 	<div id="footer" class="container">
 		<div id="fbox1">
@@ -92,6 +92,7 @@
 						<p>${"Email: "+email}</p>
 						<p>${"Tel: "+tel}</p>
 						<p>${"Mobile: "+mobile}</p>
+						<button type="button" class="btn btn-danger">Delete</button>
 					</li>
 					  <#else>
               <h1> No Contact available!  click <a href="/add">here </a> to add contact.

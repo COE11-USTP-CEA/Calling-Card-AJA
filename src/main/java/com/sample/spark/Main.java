@@ -14,15 +14,13 @@ import java.util.*;
 
 public class Main {
 
-    public static String firstname="", lastname="", middlename="", street="", city="", prov="", tel="", mobile="", email=""; 
-           
+    public static String firstname="", lastname="", middlename="", street="", city="", prov="", tel="", mobile="", email="", remove=""; 
+    public static List<String> fullname = new ArrayList<String>();
+    public static List<String> address = new ArrayList<String>();
+    public static List<String> telephone = new ArrayList<String>();
+    public static List<String> mob = new ArrayList<String>();
+    public static List<String> em = new ArrayList<String>();       
     public static void main(String[] args) {
-         List<String> fullname = new ArrayList<String>();
-         List<String> address = new ArrayList<String>();
-         List<String> telephone = new ArrayList<String>();
-         List<String> mob = new ArrayList<String>();
-         List<String> em = new ArrayList<String>();
-
         
         staticFiles.location("/css"); // Static files
 
@@ -98,6 +96,27 @@ public class Main {
 
             return new ModelAndView(model, "phonebook.ftl"); // located in src/main/resources/spark/template/freemarker
         }, new FreeMarkerEngine());
+    post("/phonebook", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            remove = req.queryParams("remove");
+
+
+            model.put("title", "Phonebook: Calling Card");
+            model.put("firstname", firstname);
+            model.put("lastname", lastname);
+            model.put("middlename", middlename);
+            model.put("street", street);
+            model.put("city", city);
+            model.put("province", prov);
+            model.put("tel", tel);
+            model.put("mobile", mobile);
+            model.put("email", email);
+            model.put("month", month());
+            model.put("date", date());
+            model.put("fullname", fullname);
+
+            return new ModelAndView(model, "phonebook.ftl"); // located in src/main/resources/spark/template/freemarker
+        }, new FreeMarkerEngine());
     get("/about", (req, res) -> {
                 Map<String, Object> model = new HashMap<>();
                 
@@ -143,10 +162,65 @@ public class Main {
 
             return new ModelAndView(model, "list.ftl");
         },  new FreeMarkerEngine());
-        
+
+    post("/view", (req, res) ->{
+            Map<String, Object> model = new HashMap<>();
+            
+            remove = req.queryParams("remove");
+
+            delete();
+            
+            model.put("title", "VIEW: Calling Card");
+            model.put("firstname", firstname);
+            model.put("lastname", lastname);
+            model.put("middlename", middlename);
+            model.put("street", street);
+            model.put("city", city);
+            model.put("province", prov);
+            model.put("tel", tel);
+            model.put("mobile", mobile);
+            model.put("email", email);
+            model.put("month", month());
+            model.put("date", date());
+            model.put("fullname", fullname);
+
+            return new ModelAndView(model, "list.ftl");
+        },  new FreeMarkerEngine());
+
+    get("/delete/:value", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            String remove = req.params(":value");
+            delete();
+             if(remove.equals("")){
+                model.put("m","input string");
+            }
+            else{
+                model.put("m","ok");
+            }
+            return new ModelAndView(model, "delete.ftl");
+        },  new FreeMarkerEngine());
+
+     get("/delete", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+           
+            return new ModelAndView(model, "remove.ftl");
+        },  new FreeMarkerEngine());
+
+     post("/delete", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            remove = req.queryParams("remove");
+            if(remove.equals("")){
+                model.put("m","input string");
+            }
+            else{
+                 delete();
+                model.put("m","ok");
+            }
+            return new ModelAndView(model, "delete.ftl");
+        },  new FreeMarkerEngine());
+
     }
 
-    
     public static String month(){
         Calendar cal = Calendar.getInstance(    );
         int m = cal.get(Calendar.MONTH);
@@ -158,6 +232,21 @@ public class Main {
         Calendar cal = Calendar.getInstance();
         int date = cal.get(Calendar.DAY_OF_MONTH);
         return date;
+    }
+    public static List delete(){
+        Map<String, Object> model = new HashMap<>();
+        boolean test = false;
+        String found= "";
+        for(String i: fullname){
+            if(i.equalsIgnoreCase(remove)){
+                test = true;
+                found = i;
+            }
+        }
+        if(test){
+            fullname.remove(found);
+        }
+        return fullname;
     }
 }
  
