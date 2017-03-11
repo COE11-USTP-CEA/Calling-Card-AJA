@@ -49,9 +49,9 @@
                             <div class="carousel-caption">
                           <h1 class="wow slideInLeft" data-wow-duration="2s" > Welcome to Calling</h1>      
                                 <h2 class="wow slideInRight" data-wow-duration="2s" > Card Directory</h2>
-                                <a class="btn btn-info btn-lg wow slideInLeft" data-wow-duration="2s" " href="/login">GET STARTED</a>
+                                <a class="btn btn-info btn-lg wow slideInLeft" data-wow-duration="2s" " href="/login">LOG-IN</a>
                                 &nbsp;&nbsp;
-                                <a class="btn btn-success btn-lg wow slideInRight" data-wow-duration="2s"" href="/phonebook">SKIP NOW </a>  
+                                <a class="btn btn-success btn-lg wow slideInRight" data-wow-duration="2s"" href="/signup">SIGN-UP</a>  
                             </div>
                         </div>
                         <div class="item">
@@ -59,9 +59,9 @@
                             <div class="carousel-caption">
                           <h1 class="wow slideInLeft" data-wow-duration="2s" >Add Contact To Your</h1>      
                                 <h2 class="wow slideInRight" data-wow-duration="2s" >Phonebook</h2>  
-                                <a class="btn btn-info btn-lg wow slideInLeft" data-wow-duration="2s" " href="/login">GET STARTED</a>
+                                <a class="btn btn-info btn-lg wow slideInLeft" data-wow-duration="2s" " href="/login">LOG IN</a>
                                 &nbsp;&nbsp;
-                                <a class="btn btn-success btn-lg wow slideInRight" data-wow-duration="2s"" href="/phonebook">SKIP NOW </a>  
+                                <a class="btn btn-success btn-lg wow slideInRight" data-wow-duration="2s"" href="/signup">SIGN UP </a>  
                            </div>
                         </div>
                         <div class="item">
@@ -69,9 +69,9 @@
                             <div class="carousel-caption">
                           <h1 class="wow slideInLeft" data-wow-duration="2s" >Easy To Customize, </h1>      
                                 <h2 class="wow slideInRight" data-wow-duration="2s" >Edit and Remove</h2>  
-                                <a class="btn btn-info btn-lg wow slideInLeft" data-wow-duration="2s" " href="/login">GET STARTED</a>
+                                <a class="btn btn-info btn-lg wow slideInLeft" data-wow-duration="2s" " href="/login">LOG-IN</a>
                                 &nbsp;&nbsp;
-                                <a class="btn btn-success btn-lg wow slideInRight" data-wow-duration="2s"" href="/phonebook">SKIP NOW </a>  
+                                <a class="btn btn-success btn-lg wow slideInRight" data-wow-duration="2s"" href="/signup">SIGN -UP</a>  
                            </div>
                            
                         </div>
@@ -80,9 +80,9 @@
                             <div class="carousel-caption">
                           <h1 class="wow slideInLeft" data-wow-duration="2s" >ADD MORE</h1>      
                                 <h2 class="wow slideInRight" data-wow-duration="2s" >SLIDES</h2>  
-                                <a class="btn btn-info btn-lg wow slideInLeft" data-wow-duration="2s" " href="/login">GET STARTED</a>
+                                <a class="btn btn-info btn-lg wow slideInLeft" data-wow-duration="2s" " href="/login">LOG-IN</a>
                                 &nbsp;&nbsp;
-                                <a class="btn btn-success btn-lg wow slideInRight" data-wow-duration="2s"" href="/phonebook">SKIP NOW </a>  
+                                <a class="btn btn-success btn-lg wow slideInRight" data-wow-duration="2s"" href="/signup">SIGN-UP </a>  
                            </div>
                         </div>
                     </div>

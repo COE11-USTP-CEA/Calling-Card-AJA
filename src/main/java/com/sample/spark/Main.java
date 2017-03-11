@@ -14,12 +14,17 @@ import java.util.*;
 
 public class Main {
 
-    public static String firstname="", lastname="", middlename="", street="", city="", prov="", tel="", mobile="", email="", remove=""; 
+    public static String firstname="", lastname="", middlename="", street="", city="", prov="", tel="", mobile="", email="", remove="", uname="", passwd="";
+    public static String uname_signup="", passwd_signup="";
     public static List<String> fullname = new ArrayList<String>();
     public static List<String> address = new ArrayList<String>();
     public static List<String> telephone = new ArrayList<String>();
     public static List<String> mob = new ArrayList<String>();
-    public static List<String> em = new ArrayList<String>();       
+    public static List<String> em = new ArrayList<String>();
+    public static List<String> user = new ArrayList<String>(); 
+    public static List<String> pass = new ArrayList<String>(); 
+
+
     public static void main(String[] args) {
         
         staticFiles.location("/css"); // Static files
@@ -124,23 +129,70 @@ public class Main {
 
                 return new ModelAndView(model, "about us.ftl"); // located in src/main/resources/spark/template/freemarker
             }, new FreeMarkerEngine());
-
-    get("/login", (req, res) -> {
+ get("/login", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             
             model.put("title", "Log-in: Calling Card");
 
-            return new ModelAndView(model, "sign-up.ftl"); // located in src/main/resources/spark/template/freemarker
+            return new ModelAndView(model, "login.ftl"); // located in src/main/resources/spark/template/freemarker
         }, new FreeMarkerEngine());
 
      post("/login", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            String uname, passwd;
-
+            boolean confirm1 = false, confirm2 = false;;
             uname = req.queryParams("username");
             passwd = req.queryParams("password");
-           
-            return new ModelAndView(model, "home.ftl"); // located in src/main/resources/spark/template/freemarker
+           for(String u : user){
+                if(u.equals(uname)){
+                    confirm1 = true;
+                }
+            }
+            for(String p : pass){
+                if(p.equals(passwd)){
+                    confirm2 = true;
+                 }
+            }
+            if(confirm1 && confirm2){
+                model.put("title", "PHONEBOOK: Calling Card");
+                model.put("firstname", firstname);
+                model.put("lastname", lastname);
+                model.put("middlename", middlename);
+                model.put("street", street);
+                model.put("city", city);
+                model.put("province", prov);
+                model.put("tel", tel);
+                model.put("mobile", mobile);
+                model.put("email", email);
+                model.put("month", month());
+                model.put("date", date());
+                model.put("fullname", fullname);
+                return new ModelAndView(model, "phonebook.ftl");
+            }
+            else{
+                model.put("title", "Calling Card");
+                return new ModelAndView(model, "home.ftl");
+            }
+             // located in src/main/resources/spark/template/freemarker
+        },  new FreeMarkerEngine());
+
+
+    get("/signup", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            
+            model.put("title", "Sign-up: Calling Card");
+
+            return new ModelAndView(model, "sign-up.ftl"); // located in src/main/resources/spark/template/freemarker
+        }, new FreeMarkerEngine());
+
+     post("/signup", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            uname_signup = req.queryParams("usernamesignup");
+            passwd_signup = req.queryParams("passwordsignup");
+            user.add(uname_signup);
+            pass.add(passwd_signup);
+          
+            model.put("title", "Log-in: Calling Card");
+            return new ModelAndView(model, "login.ftl"); // located in src/main/resources/spark/template/freemarker
         },  new FreeMarkerEngine());
 
     get("/view", (req, res) ->{
