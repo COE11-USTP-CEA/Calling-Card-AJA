@@ -3,8 +3,8 @@ package com.sample.spark;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.sample.sparkdemo.classes.Recipe;
-import com.sample.sparkdemo.classes.Ingredient;
+import com.sample.sparkdemo.extend.Recipe;
+import com.sample.sparkdemo.extend.Ingredient;
 
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;

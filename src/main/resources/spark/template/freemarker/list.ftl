@@ -43,16 +43,18 @@
 			<button onclick="sortListDir()">Sort</button>
 			<div>
 				<ul class="style3" id="id01">
-					<#list fullname as names>
-					<li class="first"  style="float: left">
-						<p class="date">${month}<b>${date}</b></p>
-						<h3>${names}</h3>
-						<p>${"Address: "+street+" "+city+", "+province+"."}</p>
-						<p>${"Email: "+email}</p>
-						<p>${"Tel: "+tel}</p>
-						<p>${"Mobile: "+mobile}</p>
-					</li>
-					</#list>
+          <#list fullname[0..*6] as names>
+              <li class="first"  style="float: left">
+                <p class="date">${month}<b>${date}</b></p>
+                <h3>${names}</h3>
+                <p>${"Address: "+street+" "+city+", "+province+"."}</p>
+                <p>${"Email: "+email}</p>
+                <p>${"Tel: "+tel}</p>
+                <p>${"Mobile: "+mobile}</p>
+              </li>
+              <#else>
+                <h1> No Contact available!  click <a href="/add">here </a> to add contact.
+          </#list>
 				</ul>
 			</div>
 		</div>

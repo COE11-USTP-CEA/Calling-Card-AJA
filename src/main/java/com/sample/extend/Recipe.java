@@ -1,4 +1,4 @@
-package com.sample.sparkdemo.classes;
+package com.sample.sparkdemo.extend;
 
 import java.util.*;
 
