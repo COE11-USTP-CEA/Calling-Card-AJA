@@ -214,7 +214,7 @@
 
               
                 <i class="fa fa-exchange fa-3x"></i>
-									<h4>Feature #1</h4>
+									<h4>Convenience at its best!</h4>
 									<p >
 										Aja Calling Card is surely convenient, fast and hassle-free(Total Convenience).
 									</p>
@@ -226,7 +226,7 @@
 
               
                 <i class="fa fa-key fa-3x"></i>
-									<h4>Feature #2</h4>
+									<h4>Ready to help</h4>
 									<p >
 										Aja Calling card ensures 100% Dedicated Customer Support.
 									</p>
@@ -238,9 +238,9 @@
 
               
                 <i class="fa fa-legal fa-3x"></i>
-									<h4>Feature #3</h4>
+									<h4>Reliable</h4>
 									<p >
-										Describe here.....
+										You can rely on us, because we are one of the best and trusted calling card website in the world.
 									</p>
                  
                       </div>
