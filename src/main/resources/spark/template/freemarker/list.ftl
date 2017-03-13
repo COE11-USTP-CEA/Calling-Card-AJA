@@ -52,10 +52,10 @@
               <li class="first"  style="float: left">
                 <p class="date">${month}<b>${date}</b></p>
                 <h3>${names}</h3>
-                <p>${"Address: "+street+" "+city+", "+province+"."}</p>
+                <p>${"Address: "+address}</p>
+                <p>${"Company: "+company}</p>
                 <p>${"Email: "+email}</p>
-                <p>${"Tel: "+tel}</p>
-                <p>${"Mobile: "+mobile}</p>
+                <p>${"Contact: "+contact}</p>
               </li>
               <#else>
                 <h1> No Contact available!  click <a href="/add">here </a> to add contact.

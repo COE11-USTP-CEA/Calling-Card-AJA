@@ -14,13 +14,10 @@ import java.util.*;
 
 public class Main {
 
-    public static String firstname="", lastname="", middlename="", street="", city="", prov="", tel="", mobile="", email="", remove="", uname="", passwd="";
+    public static String name="", add="", contact="", email="", remove="", uname="", passwd="", company="";
     public static String uname_signup="", passwd_signup="";
     public static List<String> fullname = new ArrayList<String>();
     public static List<String> address = new ArrayList<String>();
-    public static List<String> telephone = new ArrayList<String>();
-    public static List<String> mob = new ArrayList<String>();
-    public static List<String> em = new ArrayList<String>();
     public static List<String> user = new ArrayList<String>(); 
     public static List<String> pass = new ArrayList<String>(); 
 
@@ -48,32 +45,19 @@ public class Main {
         post("/add", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
 
-            firstname = req.queryParams("firstname");
-            lastname = req.queryParams("lastname");
-            middlename = req.queryParams("middlename");
-            street = req.queryParams("street");
-            city = req.queryParams("city");
-            prov = req.queryParams("province");
-            tel = req.queryParams("telephone");
-            mobile = req.queryParams("mobile");
+            name = req.queryParams("fullname");
+            add = req.queryParams("fulladdress");
+            contact = req.queryParams("contact");
+            company = req.queryParams("company");
             email = req.queryParams("email");
 
-            fullname.add(firstname+" "+middlename+" "+lastname);
-            address.add(street+" "+city+" "+prov);
-            telephone.add(tel);
-            mob.add(mobile);
-            em.add(email);
-            em.add("waca");
+            fullname.add(name);
+            address.add(req.queryParams("fulladdress"));
 
             model.put("title", "UPDATED: Calling Card");
-            model.put("firstname", firstname);
-            model.put("lastname", lastname);
-            model.put("middlename", middlename);
-            model.put("street", street);
-            model.put("city", city);
-            model.put("province", prov);
-            model.put("tel", tel);
-            model.put("mobile", mobile);
+            model.put("address", add);
+            model.put("company", company);
+            model.put("contact", contact);
             model.put("email", email);
             model.put("month", month());
             model.put("date", date());
@@ -86,14 +70,9 @@ public class Main {
             Map<String, Object> model = new HashMap<>();
 
             model.put("title", "Phonebook: Calling Card");
-            model.put("firstname", firstname);
-            model.put("lastname", lastname);
-            model.put("middlename", middlename);
-            model.put("street", street);
-            model.put("city", city);
-            model.put("province", prov);
-            model.put("tel", tel);
-            model.put("mobile", mobile);
+            model.put("address", add);
+            model.put("company", company);
+            model.put("contact", contact);
             model.put("email", email);
             model.put("month", month());
             model.put("date", date());
@@ -107,14 +86,9 @@ public class Main {
 
 
             model.put("title", "Phonebook: Calling Card");
-            model.put("firstname", firstname);
-            model.put("lastname", lastname);
-            model.put("middlename", middlename);
-            model.put("street", street);
-            model.put("city", city);
-            model.put("province", prov);
-            model.put("tel", tel);
-            model.put("mobile", mobile);
+            model.put("address", add);
+            model.put("company", company);
+            model.put("contact", contact);
             model.put("email", email);
             model.put("month", month());
             model.put("date", date());
@@ -154,14 +128,9 @@ public class Main {
             }
             if(confirm1 && confirm2){
                 model.put("title", "PHONEBOOK: Calling Card");
-                model.put("firstname", firstname);
-                model.put("lastname", lastname);
-                model.put("middlename", middlename);
-                model.put("street", street);
-                model.put("city", city);
-                model.put("province", prov);
-                model.put("tel", tel);
-                model.put("mobile", mobile);
+                model.put("address", add);
+                model.put("company", company);
+                model.put("contact", contact);
                 model.put("email", email);
                 model.put("month", month());
                 model.put("date", date());
@@ -199,14 +168,9 @@ public class Main {
             Map<String, Object> model = new HashMap<>();
             
             model.put("title", "VIEW: Calling Card");
-            model.put("firstname", firstname);
-            model.put("lastname", lastname);
-            model.put("middlename", middlename);
-            model.put("street", street);
-            model.put("city", city);
-            model.put("province", prov);
-            model.put("tel", tel);
-            model.put("mobile", mobile);
+            model.put("address", add);
+            model.put("company", company);
+            model.put("contact", contact);
             model.put("email", email);
             model.put("month", month());
             model.put("date", date());
@@ -223,14 +187,9 @@ public class Main {
             delete();
             
             model.put("title", "VIEW: Calling Card");
-            model.put("firstname", firstname);
-            model.put("lastname", lastname);
-            model.put("middlename", middlename);
-            model.put("street", street);
-            model.put("city", city);
-            model.put("province", prov);
-            model.put("tel", tel);
-            model.put("mobile", mobile);
+            model.put("address", add);
+            model.put("company", company);
+            model.put("contact", contact);
             model.put("email", email);
             model.put("month", month());
             model.put("date", date());
