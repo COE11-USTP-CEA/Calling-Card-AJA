@@ -19,7 +19,8 @@ public class Main {
     public static List<String> fullname = new ArrayList<String>();
     public static List<String> address = new ArrayList<String>();
     public static List<String> user = new ArrayList<String>(); 
-    public static List<String> pass = new ArrayList<String>(); 
+    public static List<String> pass = new ArrayList<String>();
+    public static boolean test;
 
 
     public static void main(String[] args) {
@@ -103,7 +104,7 @@ public class Main {
 
                 return new ModelAndView(model, "about us.ftl"); // located in src/main/resources/spark/template/freemarker
             }, new FreeMarkerEngine());
- get("/login", (req, res) -> {
+    get("/login", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             
             model.put("title", "Log-in: Calling Card");
@@ -116,7 +117,7 @@ public class Main {
             boolean confirm1 = false, confirm2 = false;;
             uname = req.queryParams("username");
             passwd = req.queryParams("password");
-           for(String u : user){
+            for(String u : user){
                 if(u.equals(uname)){
                     confirm1 = true;
                 }
@@ -138,8 +139,9 @@ public class Main {
                 return new ModelAndView(model, "phonebook.ftl");
             }
             else{
-                model.put("title", "Calling Card");
-                return new ModelAndView(model, "home.ftl");
+                model.put("message", "Wrong Username or Password");
+                model.put("title", "Log-in: Calling Card");
+                return new ModelAndView(model, "login-confirm.ftl");
             }
              // located in src/main/resources/spark/template/freemarker
         },  new FreeMarkerEngine());
@@ -155,13 +157,25 @@ public class Main {
 
      post("/signup", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
+            boolean taken = false;
             uname_signup = req.queryParams("usernamesignup");
             passwd_signup = req.queryParams("passwordsignup");
-            user.add(uname_signup);
-            pass.add(passwd_signup);
-          
-            model.put("title", "Log-in: Calling Card");
-            return new ModelAndView(model, "login.ftl"); // located in src/main/resources/spark/template/freemarker
+            for(String u : user){
+                if(u.equals(uname_signup)){
+                    taken = true;
+                }
+            }
+            if(taken){
+                model.put("message", "Not Available! Username is already taken.");
+                model.put("title", "Log-in: Calling Card");
+            }
+            else{
+                model.put("message", "Congratulation! You have successfully created an account.");
+                model.put("title", "Log-in: Calling Card"); 
+                user.add(uname_signup);
+                pass.add(passwd_signup);
+                }
+            return new ModelAndView(model, "sign-up-confirm.ftl"); // located in src/main/resources/spark/template/freemarker
         },  new FreeMarkerEngine());
 
     get("/view", (req, res) ->{
@@ -183,30 +197,47 @@ public class Main {
             Map<String, Object> model = new HashMap<>();
             
             remove = req.queryParams("remove");
-
-            delete();
-            
-            model.put("title", "VIEW: Calling Card");
-            model.put("address", add);
-            model.put("company", company);
-            model.put("contact", contact);
-            model.put("email", email);
-            model.put("month", month());
-            model.put("date", date());
-            model.put("fullname", fullname);
-
-            return new ModelAndView(model, "list.ftl");
+            testifexist();
+            if(test){
+                delete();
+                
+                model.put("title", "VIEW: Calling Card");
+                model.put("address", add);
+                model.put("company", company);
+                model.put("contact", contact);
+                model.put("email", email);
+                model.put("month", month());
+                model.put("date", date());
+                model.put("fullname", fullname);
+                model.put("message", "You have successfully deleted the Card.");  
+                test = false;
+                return new ModelAndView(model, "list-confirm.ftl");
+            }
+            else{
+                model.put("title", "VIEW: Calling Card");
+                model.put("address", add);
+                model.put("company", company);
+                model.put("contact", contact);
+                model.put("email", email);
+                model.put("month", month());
+                model.put("date", date());
+                model.put("fullname", fullname);
+                model.put("message", "ERROR! The Card doesn't exist.");
+                return new ModelAndView(model, "list-confirm.ftl");
+            }
         },  new FreeMarkerEngine());
 
     get("/delete/:value", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             String remove = req.params(":value");
-            delete();
-             if(remove.equals("")){
-                model.put("m","input string");
+            testifexist();
+             if(test){
+                delete();
+                model.put("message", "You have successfully deleted the Card.");  
+                test = false;
             }
             else{
-                model.put("m","ok");
+                model.put("message", "ERROR! The Card doesn't exist.");
             }
             return new ModelAndView(model, "delete.ftl");
         },  new FreeMarkerEngine());
@@ -220,12 +251,14 @@ public class Main {
      post("/delete", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             remove = req.queryParams("remove");
-            if(remove.equals("")){
-                model.put("m","input string");
+            testifexist();
+            if(test){
+                delete();
+                model.put("message", "You have successfully deleted the Card.");
+                test = false;
             }
             else{
-                 delete();
-                model.put("m","ok");
+                model.put("message", "ERROR! The Card doesn't exist.");
             }
             return new ModelAndView(model, "delete.ftl");
         },  new FreeMarkerEngine());
@@ -246,18 +279,26 @@ public class Main {
     }
     public static List delete(){
         Map<String, Object> model = new HashMap<>();
-        boolean test = false;
+        boolean ok = false;
         String found= "";
         for(String i: fullname){
             if(i.equalsIgnoreCase(remove)){
-                test = true;
+                ok = true;
                 found = i;
             }
         }
-        if(test){
+        if(ok){
             fullname.remove(found);
         }
         return fullname;
+    }
+    public static boolean testifexist(){
+        for(String i: fullname){
+            if(i.equalsIgnoreCase(remove)){
+                test = true;
+            }
+        }
+        return test;
     }
 }
  

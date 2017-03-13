@@ -22,6 +22,7 @@
                         <div id="login" class="animate form">
                             <form  method="post"action="/signup" autocomplete="on"> 
                                 <h1> Sign up </h1> 
+                                <div><p style="color: green; text-align: center">${message}</p></div> 
                                 <p> 
                                     <label for="usernamesignup" class="uname" >Your username</label>
                                     <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
