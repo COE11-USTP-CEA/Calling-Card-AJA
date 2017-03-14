@@ -1,13 +1,13 @@
-#Calling Card web application by Aja
+# Calling Card web application by Aja
 
-##Program Description
+## Program Description
 
       Calling Card Directory is a web application that displays contact information of 
       any individual who are signed in the page. It contains the person's information 
       such as address, contact number, email , etc.. With the help of this webpage
       you can be connected with the world
       
-##How to install Maven
+## How to install Maven
 
 * Download and install java [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * Create user variable for java development kit(jdk)
@@ -37,7 +37,7 @@
       
 Visit [Maven](http://maven.apache.org/install.html) for more info
 
-##Routes
+## Routes
 
       localhost:4567 - landing page
       localhost:4567/add - adding contact info form
@@ -45,7 +45,7 @@ Visit [Maven](http://maven.apache.org/install.html) for more info
       localhost:4567/phonebook - phonebook (expiremental)
       localhost:4567/about - team and project informations
 
-##Team Members
+## Team Members
 
       Wave Cantery Ambray
       Athena Louisse Abella
