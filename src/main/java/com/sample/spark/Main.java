@@ -104,6 +104,13 @@ public class Main {
 
                 return new ModelAndView(model, "about us.ftl"); // located in src/main/resources/spark/template/freemarker
             }, new FreeMarkerEngine());
+     get("/contact", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+                
+                model.put("title", "Contact us: Calling Card");
+
+                return new ModelAndView(model, "contact us.ftl"); // located in src/main/resources/spark/template/freemarker
+            }, new FreeMarkerEngine());
     get("/login", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             
