@@ -188,6 +188,14 @@
                 </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="just-txt-div">
+		<strong> LEMERSON</strong>
+		    <p>
+		       CUTAB
+		    </p>
+                </div>
+                </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="just-txt-div">
                   <strong> ANGELA</strong> 
                     <p>
                         CAGAS
