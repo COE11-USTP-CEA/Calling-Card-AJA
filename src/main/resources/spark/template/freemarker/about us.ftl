@@ -63,13 +63,13 @@
   <div class="row">
     <div class="col-sm-4">
       <h3>Angel Cagas</h3>
-      <p>The Decision Expert...</p>
-      <p>The responsible of deciding to help or not...</p>
+      <p>The Decision Expert 1...</p>
+      <p>The responsible of deciding...</p>
     </div>
     <div class="col-sm-4">
       <h3>Lemerson Cutab</h3>
-      <p>The Contact us..</p>
-      <p>The responsible of Contact us page...</p>
+      <p>The Decision Expert 1..</p>
+      <p>The responsible of deciding...</p>
     </div>
     <div class="col-sm-4">
       <h3>Jay Genite</h3>        
