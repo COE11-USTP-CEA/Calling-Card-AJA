@@ -367,9 +367,9 @@
               
 										<h3> <strong>SOCIAL PRESENCE</strong> </h3>
                 We love to be social,Catch Us On
-                <a href="#" ><h4>FACEBOOK </h4></a>
-                   <a href="#" ><h4>TWITTER </h4></a>
-                 <a href="#" ><h4>LINKEDIN </h4></a>
+                <a href="https://www.facebook.com/" ><h4>FACEBOOK </h4></a>
+                   <a href="https://twitter.com/" ><h4>TWITTER </h4></a>
+                 <a href="https://www.instagram.com/" ><h4>INSTAGRAM </h4></a>
 									
                     
             </div>
@@ -377,8 +377,8 @@
             <h3> <strong>PHYSICAL LOCATION</strong> </h3>
                 Reach Us Below:
                 <br />
-                <h4>90/567, Raw Street Lane,</h4>
-                 <h4>United States of America,</h4>
+                <h4>C.M Recto Lapasan Cagayan de oro City,</h4>
+                 <h4>Philippines,</h4>
                  <h4>Pin: 309987-09</h4>
             </div>
         </div>

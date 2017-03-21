@@ -27,10 +27,10 @@
 			<br>
 			<br>
 			<br>
-			<li><a href="/phonebook" accesskey="2" title="">Phonebook</a></li>
+			<li><a href="/view" accesskey="2" title="">View Contacts</a></li>
 			<li><a href="/add" accesskey="3" title="">Add Contacts</a></li>
 			<li><a href="/about" accesskey="4" title="">About Us</a></li>
-			<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+			<li><a href="/contact" accesskey="5" title="">Contact Us</a></li>
 		</ul>
 	</div>
 </div>
@@ -48,7 +48,7 @@
 			<button onclick="sortListDir()">Sort</button>
 			<div>
 				<ul class="style3" id="id01">
-          <#list fullname[0..*6] as names>
+          <#list fullname[0..*6]?reverse as names>
               <li class="first"  style="float: left">
                 <p class="date">${month}<b>${date}</b></p>
                 <h3>${names}</h3>

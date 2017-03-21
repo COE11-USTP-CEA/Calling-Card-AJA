@@ -9,10 +9,30 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 	<link href="contact us.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
 	<title>${title}</title>
 </head>
 
 <body>
+<div id="header" class="container" style="position: static">
+	<div id="logo">
+		<a href="/"><img src="images/aja_logo.png" height="80" width="150"alt="" class="image image-logo"/></a>
+		<h1 class="logo-h1"><a href="/">CALLING CARD DIRECTORY</a></h1>
+	</div>
+	<div id="menu">
+		<ul>
+			<br>
+			<br>
+			<br>
+			<li><a href="/view" accesskey="2" title="">View Contacts</a></li>
+			<li><a href="/add" accesskey="3" title="">Add Contacts</a></li>
+			<li><a href="/about" accesskey="4" title="">About Us</a></li>
+			<li><a href="/contact" accesskey="5" title="">Contact Us</a></li>
+		</ul>
+	</div>
+</div>
   
 <div class="container">
   <div class="row header">
@@ -20,7 +40,7 @@
     <h3>Fill out the form below to learn more!</h3>
   </div>
   <div class="row body">
-    <form action="#">
+    <form method="post" action="/contact">
       <ul>
         
         <li>

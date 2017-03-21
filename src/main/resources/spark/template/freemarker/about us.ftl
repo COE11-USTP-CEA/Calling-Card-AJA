@@ -27,10 +27,10 @@
 			<br>
 			<br>
 			<br>
-			<li><a href="/phonebook" accesskey="2" title="">Phonebook</a></li>
+			<li><a href="/view" accesskey="2" title="">View Contacts</a></li>
 			<li><a href="/add" accesskey="3" title="">Add Contacts</a></li>
 			<li><a href="/about" accesskey="4" title="">About Us</a></li>
-			<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+			<li><a href="/contact" accesskey="5" title="">Contact Us</a></li>
 		</ul>
 	</div>
 </div>

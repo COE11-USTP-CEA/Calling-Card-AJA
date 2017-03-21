@@ -2,7 +2,10 @@
 	{
 		height: 100%;
 	}
-	
+	.frame{
+		width: 20px;
+		height: 20px;
+	}
 	body
 	{
 		margin: 0px;

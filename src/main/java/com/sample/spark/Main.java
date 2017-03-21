@@ -20,6 +20,9 @@ public class Main {
     public static List<String> address = new ArrayList<String>();
     public static List<String> user = new ArrayList<String>(); 
     public static List<String> pass = new ArrayList<String>();
+    public static String contact_firstname ="";
+    public static String contact_lastname ="";
+    public static String comments ="" , c_email="";
     public static boolean test;
 
 
@@ -106,10 +109,29 @@ public class Main {
             }, new FreeMarkerEngine());
      get("/contact", (req, res) -> {
                 Map<String, Object> model = new HashMap<>();
-                
+    
                 model.put("title", "Contact us: Calling Card");
+                model.put("first_name", contact_firstname);
+                model.put("last_name", contact_lastname);
+                model.put("email", c_email);
+                model.put("comments", comments);
 
                 return new ModelAndView(model, "contact us.ftl"); // located in src/main/resources/spark/template/freemarker
+            }, new FreeMarkerEngine());
+        post("/contact", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+                contact_firstname= req.queryParams("first_name");
+                contact_lastname= req.queryParams("last_name");
+                c_email= req.queryParams("email");
+                comments= req.queryParams("comments");
+                
+                model.put("title", "Contact us: Calling Card");
+                model.put("first_name", contact_firstname);
+                model.put("last_name", contact_lastname);
+                model.put("email", c_email);
+                model.put("comments", comments);
+
+                return new ModelAndView(model, "feedback.ftl"); // located in src/main/resources/spark/template/freemarker
             }, new FreeMarkerEngine());
     get("/login", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
