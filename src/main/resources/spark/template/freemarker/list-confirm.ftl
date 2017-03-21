@@ -39,7 +39,7 @@
 <p class="center-up">Click again to sort the list descending (Z to A):</p>
 <div><p style="color: red; text-align: center">${message}</p></div> 
 
-<form method="post" action="/view" style="margin-right: 10px;">
+<form method="post" action="/view" style="margin-right: 10px; text-align: center ">
 	<input type="text" placeholder="Enter Card Name.." name="remove" id="search">
 	<input type="submit" value="Delete Card!" id="submit">
 </form>

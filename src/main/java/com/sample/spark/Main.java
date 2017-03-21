@@ -3,8 +3,8 @@ package com.sample.spark;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.sample.sparkdemo.extend.Recipe;
-import com.sample.sparkdemo.extend.Ingredient;
+import com.sample.spark.extend.*;
+//import com.sample.spark.extend.Ingredient;
 
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;
@@ -27,7 +27,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        
+        Cards cards = new Cards();
         staticFiles.location("/css"); // Static files
 
         get("/", (req, res) -> {

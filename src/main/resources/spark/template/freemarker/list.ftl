@@ -38,7 +38,7 @@
 <p class="center-up">Click the button to sort the list ascending (A to Z):</p>
 <p class="center-up">Click again to sort the list descending (Z to A):</p>
 
-<form method="post" action="/view" style="margin-right: 10px;">
+<form method="post" action="/view" style="margin-right: 10px; text-align: center ">
 	<input type="text" placeholder="Enter Card Name.." name="remove" id="search">
 	<input type="submit" value="Delete Card!" id="submit">
 </form>
