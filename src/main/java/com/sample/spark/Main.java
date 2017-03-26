@@ -16,7 +16,7 @@ public class Main {
     public static String contact_firstname ="";
     public static String contact_lastname ="";
     public static String comments ="" , c_email="", active="Guest";
-    public static boolean log = false;
+    public static boolean log = true;
 
 
     public static void main(String[] args) {
@@ -196,12 +196,16 @@ public class Main {
             boolean test = card.testif(remove);
                 if(test){
                     card.deletebyid(remove);
-                    model.put("message", "You have successfully deleted the Card.");  
+                    model.put("title", "Success!: Calling Card");
+                    model.put("message", "You have successfully deleted the Card."); 
+                    model.put("cards", card.all()); 
                 }
                 else{
+                    model.put("title", "OOPS!: Calling Card");
                     model.put("message", "ERROR! The Card doesn't exist.");
+                    model.put("cards", card.all());
                 }
-                return new ModelAndView(model, "delete.ftl");
+                return new ModelAndView(model, "list-confirm.ftl");
             }
             else{
                 model.put("message", "You must be log-in!");
@@ -209,6 +213,30 @@ public class Main {
                 return new ModelAndView(model, "login-confirm.ftl");
             }
         },  new FreeMarkerEngine());
+    get("/view/:id", (req, res) -> {
+        Map<String, Object> model = new HashMap<>();
+            if(log){
+            String edit = req.params(":id");
+            boolean test = card.testif(edit);
+                if(test){
+                    info infos = card.showbyid(edit);
+                    model.put("title", "edit card");
+                    model.put("card", infos);
+                    return new ModelAndView(model, "view.ftl");
+                }
+                else{
+                    model.put("title", "Cards");
+                    model.put("cards", card.all());
+                    model.put("message", "ERROR! The Card doesn't exist.");
+                    return new ModelAndView(model, "list-confirm.ftl");
+                }
+            }
+            else{
+                model.put("message", "You must be log-in!");
+                model.put("title", "Log-in: Calling Card");
+                return new ModelAndView(model, "login-confirm.ftl");
+            }
+            },  new FreeMarkerEngine());
     get("/edit/:id", (req, res) -> {
         Map<String, Object> model = new HashMap<>();
             if(log){
@@ -216,12 +244,16 @@ public class Main {
             boolean test = card.testif(edit);
                 if(test){
                     info infos = card.showbyid(edit);
-                    model.put("cards", infos);
+                    model.put("title", "EDIT!: Calling Card");
+                    model.put("card", infos);
+                    return new ModelAndView(model, "edit.ftl");
                 }
                 else{
+                    model.put("title", "Cards");
+                    model.put("cards", card.all());
                     model.put("message", "ERROR! The Card doesn't exist.");
+                    return new ModelAndView(model, "list-confirm.ftl");
                 }
-                return new ModelAndView(model, "edit.ftl");
             }
             else{
                 model.put("message", "You must be log-in!");
@@ -238,14 +270,29 @@ public class Main {
                 String companyname = req.queryParams("companyname");
                 String contact = req.queryParams("contact");
                 String email = req.queryParams("email");
-                if(test){
-                    info infos = card.updatebyid(edit,name,address,compnyname,contact,email);
-                    model.put("message", "You have successfully deleted the Card.");  
-                }
-                else{
-                    model.put("message", "ERROR! The Card doesn't exist.");
-                }
-                return new ModelAndView(model, "delete.ftl");
+                
+                info infos = card.updatebyid(edit,name,address,companyname,contact,email);
+                model.put("message", "You have successfully edited the Card.");
+                model.put("title", "Success: Calling Card");
+                model.put("cards", card.all());
+                return new ModelAndView(model, "list-confirm.ftl");
+            }
+            else{
+                model.put("message", "You must be log-in!");
+                model.put("title", "Log-in: Calling Card");
+                return new ModelAndView(model, "login-confirm.ftl");
+            }
+        },  new FreeMarkerEngine());
+        post("/search", (req, res) -> {
+        Map<String, Object> model = new HashMap<>();
+            if(log){
+                String search = req.queryParams("search");
+                
+                int counter = card.count(search);
+                model.put("message", counter +" Card(s) found.");
+                model.put("title", "Search: Calling Card");
+                model.put("cards", card.search(search));
+                return new ModelAndView(model, "list-confirm.ftl");
             }
             else{
                 model.put("message", "You must be log-in!");

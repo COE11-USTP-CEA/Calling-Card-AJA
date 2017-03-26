@@ -52,7 +52,7 @@
       <label for="email">Email:</label>
       <input type="email" class="form-control" id="email" required="required" placeholder="eg. myemail@example.com" name="email">
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>
 

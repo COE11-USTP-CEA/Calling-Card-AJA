@@ -149,7 +149,7 @@
 	ul.style3 li:hover
 	{
 		padding: 0px 10px;
-		border-top: none;
+		
 		background: rgba(1, 115, 178, 0.53);;
 	}
 	
@@ -622,7 +622,7 @@
 	}
 	#search
 	{
-		width: 425px;
+		width: 370px;
 		padding: 7px;
 		border: 1px solid #607d8b;
 	}
@@ -652,6 +652,17 @@
     background-color: #d9534f;
     border-color: #d43f3a;
 }
+.btn-info
+{
+    color: #fff;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}.btn-success
+{
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
 .btn {
     display: inline-block;
     padding: 6px 12px;
@@ -676,4 +687,8 @@
 .logout{
 	float: right;
 	margin-right: 80px;
+}
+.card{
+	float: left;
+	
 }

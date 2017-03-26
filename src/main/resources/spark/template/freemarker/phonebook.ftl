@@ -20,9 +20,9 @@
 		<h1 class="logo-h1"><a href="/phonebook">CALLING CARD DIRECTORY</a></h1>
 	</div>
 	<div id="menu">
-		<form action="http://www.google.com/" id="menu" style="margin-right: 10px;">
-				<input type="text" placeholder="Search a Card.." name="search" id="search">
-				<input type="submit" value="Go!" id="submit">
+		<form method="post" action="/search" id="menu" style="margin-right: 10px;">
+				<input type="text" placeholder="Id, Name, Address, Company Name, Contact, E-mail.." name="search" id="search">
+				<input type="submit" value="Search Now" id="submit">
 		</form>
 		<ul>
 			<br>
@@ -86,19 +86,29 @@
 <div id="footer-wrapper">
 	<div id="footer" class="container">
 		<div id="fbox1">
-			<button onclick="sortListDir()">Sort</button>
+			<button class="btn btn-danger" onclick="sortListDir()">Sort</button>
 			<div>
 				<ul class="style3" id="id01">
 					<#list cards[0..*3]?reverse as card>
-					<li class="first"  style="float: left">
+					<div class="card">
+					<li class="first" style="float: left">
+					<div style="float: left">
 						<p class="date">ID: ${card.id}<br>${card.month}<b>${card.date}</b></p>
+						</div>
+						<div style="float: left">
 						<h3>${card.name}</h3>
 						<p>${"Address: "+card.address}</p>
             <p>${"Company: "+card.companyname}</p>
 						<p>${"Email: "+card.email}</p>
 						<p>${"Contact: "+card.contact}</p>
-						<button type="button" class="btn btn-danger"><a Onclick="deletewarn()" href="/delete/${card.id}">Delete</a></button>
+						</div>
+						<div style="clear: both">
+						<button type="button" class="btn btn-danger"><a Onclick="deletewarn()" href="/delete/${card.id}">DELETE</a></button>
+						<button type="button" class="btn btn-success"><a Onclick="deletewarn()" href="/edit/${card.id}">EDIT</a></button>
+						<button type="button" class="btn btn-info"><a Onclick="deletewarn()" href="/view/${card.id}">VIEW</a></button>
+					</div>
 					</li>
+					</div>
 					  <#else>
               <h1> No Contact available!  click <a href="/add">here </a> to add contact.
 					</#list>
@@ -118,74 +128,8 @@
 	
 	<p>&copy; CALLING CARD. All rights reserved. | Photos from <a href="http://github.com/coe11-ustp-cea">Github.com</a> | Credits to:<a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
 
-<script>
-function sortListDir() {
-  var list, i, switching, b, shouldSwitch, dir, switchcount = 0;
-  list = document.getElementById("id01");
-  switching = true;
-  //Set the sorting direction to ascending:
-  dir = "asc"; 
-  //Make a loop that will continue until no switching has been done:
-  while (switching) {
-    //start by saying: no switching is done:
-    switching = false;
-    b = list.getElementsByTagName("LI");
-    //Loop through all list-items:
-    for (i = 0; i < (b.length - 1); i++) {
-      //start by saying there should be no switching:
-      shouldSwitch = false;
-      /*check if the next item should switch place with the current item,
-      based on the sorting direction (asc or desc):*/
-      if (dir == "asc") {
-        if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-          /*if next item is alphabetically lower than current item,
-          mark as a switch and break the loop:*/
-          shouldSwitch= true;
-          break;
-        }
-      } else if (dir == "desc") {
-        if (b[i].innerHTML.toLowerCase() < b[i + 1].innerHTML.toLowerCase()) {
-          /*if next item is alphabetically higher than current item,
-          mark as a switch and break the loop:*/
-          shouldSwitch= true;
-          break;
-        }
-      }
-    }
-    if (shouldSwitch) {
-      /*If a switch has been marked, make the switch
-      and mark that a switch has been done:*/
-      b[i].parentNode.insertBefore(b[i + 1], b[i]);
-      switching = true;
-      //Each time a switch is done, increase switchcount by 1:
-      switchcount ++;
-    } else {
-      /*If no switching has been done AND the direction is "asc",
-      set the direction to "desc" and run the while loop again.*/
-      if (switchcount == 0 && dir == "asc") {
-        dir = "desc";
-        switching = true;
-      }
-    }
-  }
-}
-</script>
-<script>
-function logoutwarn() {
-var x = confirm("You are about to Log-in/log-out!");
-		if (x)
-          return true;
-      else
-        return false;
-}
-function deletewarn() {
-var x = confirm("Are you sure you want to delete?");
-      if (x)
-          return true;
-      else
-        return false;
-}
-</script>
+
+<#include "javascript.ftl">
 
 
 </body>

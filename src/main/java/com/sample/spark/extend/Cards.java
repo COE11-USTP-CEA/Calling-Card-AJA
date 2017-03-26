@@ -4,7 +4,26 @@ import com.sample.spark.extend.*;
 
 public class cards{
 		ArrayList<info> listofcards = new ArrayList();
+		ArrayList<info> temp = new ArrayList();
 
+		public  int count(String c){
+			int counter = 0;
+			for(info i : listofcards){
+				if((c.equalsIgnoreCase(i.id))||(c.equalsIgnoreCase(i.name))||(c.equalsIgnoreCase(i.address))||(c.equalsIgnoreCase(i.companyname))||(c.equalsIgnoreCase(i.contact))||(c.equalsIgnoreCase(i.email))){
+					counter += 1;
+				}
+			}
+			return counter;
+		}
+		public ArrayList<info> search(String c){
+			temp.clear();
+			for(info i : listofcards){
+				if((c.equalsIgnoreCase(i.id))||(c.equalsIgnoreCase(i.name))||(c.equalsIgnoreCase(i.address))||(c.equalsIgnoreCase(i.companyname))||(c.equalsIgnoreCase(i.contact))||(c.equalsIgnoreCase(i.email))){
+					temp.add(i);	
+				}
+			}
+			return temp;
+		}
 		public ArrayList<info> all(){
 			return listofcards;
 		}
@@ -15,7 +34,7 @@ public class cards{
 		for (info i : listofcards ) {
 			if ( id.equals(i.id) ) {
 				i.setname(name);
-				i.setname(id);
+				i.setid(id);
 				i.setaddress(address);
 				i.setcompanyname(companyname);
 				i.setcontact(contact);
