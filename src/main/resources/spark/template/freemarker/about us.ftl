@@ -16,7 +16,7 @@
 <div id="header" class="container" style="position: static">
 	<div id="logo">
 		<a href="/"><img src="images/aja_logo.png" height="80" width="150"alt="" class="image image-logo"/></a>
-		<h1 class="logo-h1"><a href="/" style="font-weight: bold" >CALLING CARD DIRECTORY</a></h1>
+		<h1 class="logo-h1"><a href="/phonebook" style="font-weight: bold" >CALLING CARD DIRECTORY</a></h1>
 	</div>
 	<div id="menu">
 		<form action="http://www.google.com/" id="menu" style="margin-right: 10px;">

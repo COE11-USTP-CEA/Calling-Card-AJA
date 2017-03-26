@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.sample.spark.extend.*;
-//import com.sample.spark.extend.Ingredient;
-
+import com.sample.spark.account.*;
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;
 import static spark.Spark.*;
@@ -14,126 +13,273 @@ import java.util.*;
 
 public class Main {
 
-    public static String name="", add="", contact="", email="", remove="", uname="", passwd="", company="";
-    public static String uname_signup="", passwd_signup="";
-    public static List<String> fullname = new ArrayList<String>();
-    public static List<String> address = new ArrayList<String>();
-    public static List<String> user = new ArrayList<String>(); 
-    public static List<String> pass = new ArrayList<String>();
     public static String contact_firstname ="";
     public static String contact_lastname ="";
-    public static String comments ="" , c_email="";
-    public static boolean test;
+    public static String comments ="" , c_email="", active="Guest";
+    public static boolean log = false;
 
 
     public static void main(String[] args) {
-        Cards cards = new Cards();
+
         staticFiles.location("/css"); // Static files
-
-        get("/", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            
-            model.put("title", "Home: Calling Card");
-
-            return new ModelAndView(model, "home.ftl"); // located in src/main/resources/spark/template/freemarker
-        }, new FreeMarkerEngine());
-
-        get("/add", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-
-            model.put("title", "Add Contact");
-            
-            return new ModelAndView(model, "add.ftl");
-        }, new FreeMarkerEngine());
-
-        post("/add", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-
-            name = req.queryParams("fullname");
-            add = req.queryParams("fulladdress");
-            contact = req.queryParams("contact");
-            company = req.queryParams("company");
-            email = req.queryParams("email");
-
-            fullname.add(name);
-            address.add(req.queryParams("fulladdress"));
-
-            model.put("title", "UPDATED: Calling Card");
-            model.put("address", add);
-            model.put("company", company);
-            model.put("contact", contact);
-            model.put("email", email);
-            model.put("month", month());
-            model.put("date", date());
-            model.put("fullname", fullname);
-
-            return new ModelAndView(model, "phonebook.ftl"); // located in src/main/resources/spark/template/freemarker
-        }, new FreeMarkerEngine());
-
-    get("/phonebook", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-
-            model.put("title", "Phonebook: Calling Card");
-            model.put("address", add);
-            model.put("company", company);
-            model.put("contact", contact);
-            model.put("email", email);
-            model.put("month", month());
-            model.put("date", date());
-            model.put("fullname", fullname);
-
-            return new ModelAndView(model, "phonebook.ftl"); // located in src/main/resources/spark/template/freemarker
-        }, new FreeMarkerEngine());
-    post("/phonebook", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            remove = req.queryParams("remove");
-
-
-            model.put("title", "Phonebook: Calling Card");
-            model.put("address", add);
-            model.put("company", company);
-            model.put("contact", contact);
-            model.put("email", email);
-            model.put("month", month());
-            model.put("date", date());
-            model.put("fullname", fullname);
-
-            return new ModelAndView(model, "phonebook.ftl"); // located in src/main/resources/spark/template/freemarker
-        }, new FreeMarkerEngine());
-    get("/about", (req, res) -> {
+        cards card = new cards();
+        accounts account = new accounts();
+            get("/", (req, res) -> {
                 Map<String, Object> model = new HashMap<>();
+                if(log){
+                    String status = "Log-in";
+                    if(log){
+                        status = "Log-out";
+                    }
+                    else{
+                        active = "Guest";
+                        status = "Log-in";
+                    }
+                    model.put("title", "Phonebook: Calling Card");
+                    model.put("cards", card.all());
+                    model.put("username",active);
+                    model.put("profile","/profile");
+                    model.put("action", "/");
+                    model.put("status", "Log-out");
+
+                    return new ModelAndView(model, "phonebook.ftl"); // located in src/main/resources/spark/template/freemarker
+                }
+                else{
+                    model.put("title", "Home: Calling Card");
+                    log = false;
+                    return new ModelAndView(model, "home.ftl"); // located in src/main/resources/spark/template/freemarker
+                    }
+                }, new FreeMarkerEngine());
+            post("/", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+                String logout = req.queryParams("logout");
+                String status = "Log-in";
+                if(logout.equals("true")){
+                    if(log){
+                        log = false;
+                        status = "Log-out";
+                    }
+                    else{
+                        log = true;
+                        active = "Guest";
+                        status = "Log-in";
+                    }
+                }
+                model.put("title", "Home: Calling Card");
+
+                return new ModelAndView(model, "home.ftl"); // located in src/main/resources/spark/template/freemarker
+            }, new FreeMarkerEngine());
+            get("/phonebook", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+                String status = "Log-in";
+                if(log){
+                    status = "Log-out";
+                    }
+                else{
+                    active = "Guest";
+                    status = "Log-in";
+                }
+                model.put("title", "Phonebook: Calling Card");
+                model.put("cards", card.all());
+                model.put("username",active);
+                model.put("profile", "#");
+                model.put("action","/");
+                model.put("status", "Log-in");
+                return new ModelAndView(model, "phonebook.ftl"); // located in src/main/resources/spark/template/freemarker
+            }, new FreeMarkerEngine());
+            post("/phonebook", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+                String remove = req.queryParams("remove");
+                String status = "Log-in";
+                String logout = req.queryParams("logout");
+                if(logout.equals("true")){
+                    if(log){
+                        log = false;
+                        status = "Log-out";
+                    }
+                    else{
+                        log = true;
+                        active = "Guest";
+                        status = "Log-in";
+                    }
+                }
+                model.put("title", "Phonebook: Calling Card");
+                model.put("cards", card.all());
+                model.put("username",active);
+                model.put("profile","/");
+                model.put("action","/");
+                model.put("status", status);
                 
+
+                return new ModelAndView(model, "phonebook.ftl"); // located in src/main/resources/spark/template/freemarker
+            }, new FreeMarkerEngine());
+            get("/add", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+                if(log){
+                    model.put("title", "Add Contact");
+                    
+                    return new ModelAndView(model, "add.ftl");
+                }
+                else{
+                    model.put("message", "You must be log-in!");
+                    model.put("title", "Log-in: Calling Card");
+                    return new ModelAndView(model, "login-confirm.ftl");
+                }
+                }, new FreeMarkerEngine());
+
+            post("/add", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+
+                String name = req.queryParams("fullname");
+                String add = req.queryParams("fulladdress");
+                String contact = req.queryParams("contact");
+                String company = req.queryParams("company");
+                String email = req.queryParams("email");
+                String id = card.getSaltString();
+                int date = date();
+                String month = month();
+                info infos = new info(id,name,add,company,contact,email,date,month);
+                card.add(infos);
+
+                model.put("title", "UPDATED: Calling Card");
+                model.put("cards", card.all());
+                model.put("username",active);
+                model.put("profile","/profile");
+                model.put("action", "/");
+                model.put("status", "Log-out");
+
+                return new ModelAndView(model, "phonebook.ftl"); // located in src/main/resources/spark/template/freemarker
+            }, new FreeMarkerEngine());
+
+            get("/about", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+                    
                 model.put("title", "About us: Calling Card");
 
                 return new ModelAndView(model, "about us.ftl"); // located in src/main/resources/spark/template/freemarker
-            }, new FreeMarkerEngine());
-     get("/contact", (req, res) -> {
+                }, new FreeMarkerEngine());
+            get("/view", (req, res) ->{
                 Map<String, Object> model = new HashMap<>();
-    
-                model.put("title", "Contact us: Calling Card");
-                model.put("first_name", contact_firstname);
-                model.put("last_name", contact_lastname);
-                model.put("email", c_email);
-                model.put("comments", comments);
+                
+                model.put("title", "VIEW: Calling Card");
+                model.put("cards", card.all());
 
-                return new ModelAndView(model, "contact us.ftl"); // located in src/main/resources/spark/template/freemarker
+                return new ModelAndView(model, "list.ftl");
+            },  new FreeMarkerEngine());
+
+            post("/view", (req, res) ->{
+                Map<String, Object> model = new HashMap<>();
+                
+                String remove = req.queryParams("remove");
+                info infos = card.showbyid(remove);
+                boolean test = card.testif(remove);
+                if(test){
+                    card.deletebyid(remove);
+                    model.put("title", "VIEW: Calling Card");
+                    model.put("cards", card.all());
+                    model.put("message", "You have successfully deleted the Card.");  
+                    return new ModelAndView(model, "list-confirm.ftl");
+                }
+                else{
+                    model.put("title", "VIEW: Calling Card");
+                    model.put("cards", card.all());
+                    model.put("message", "ERROR! The Card doesn't exist.");
+                    return new ModelAndView(model, "list-confirm.ftl");
+                }
+            },  new FreeMarkerEngine());
+
+    get("/delete/:id", (req, res) -> {
+        Map<String, Object> model = new HashMap<>();
+            if(log){
+            String remove = req.params(":id");
+            info infos = card.showbyid(remove);
+            boolean test = card.testif(remove);
+                if(test){
+                    card.deletebyid(remove);
+                    model.put("message", "You have successfully deleted the Card.");  
+                }
+                else{
+                    model.put("message", "ERROR! The Card doesn't exist.");
+                }
+                return new ModelAndView(model, "delete.ftl");
+            }
+            else{
+                model.put("message", "You must be log-in!");
+                model.put("title", "Log-in: Calling Card");
+                return new ModelAndView(model, "login-confirm.ftl");
+            }
+        },  new FreeMarkerEngine());
+    get("/edit/:id", (req, res) -> {
+        Map<String, Object> model = new HashMap<>();
+            if(log){
+            String edit = req.params(":id");
+            boolean test = card.testif(edit);
+                if(test){
+                    info infos = card.showbyid(edit);
+                    model.put("cards", infos);
+                }
+                else{
+                    model.put("message", "ERROR! The Card doesn't exist.");
+                }
+                return new ModelAndView(model, "edit.ftl");
+            }
+            else{
+                model.put("message", "You must be log-in!");
+                model.put("title", "Log-in: Calling Card");
+                return new ModelAndView(model, "login-confirm.ftl");
+            }
+            },  new FreeMarkerEngine());
+    post("/edit", (req, res) -> {
+        Map<String, Object> model = new HashMap<>();
+            if(log){
+                String edit = req.queryParams("id");
+                String name = req.queryParams("name");
+                String address = req.queryParams("address");
+                String companyname = req.queryParams("companyname");
+                String contact = req.queryParams("contact");
+                String email = req.queryParams("email");
+                if(test){
+                    info infos = card.updatebyid(edit,name,address,compnyname,contact,email);
+                    model.put("message", "You have successfully deleted the Card.");  
+                }
+                else{
+                    model.put("message", "ERROR! The Card doesn't exist.");
+                }
+                return new ModelAndView(model, "delete.ftl");
+            }
+            else{
+                model.put("message", "You must be log-in!");
+                model.put("title", "Log-in: Calling Card");
+                return new ModelAndView(model, "login-confirm.ftl");
+            }
+            },  new FreeMarkerEngine());
+        get("/contact", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+    
+            model.put("title", "Contact us: Calling Card");
+            model.put("first_name", contact_firstname);
+            model.put("last_name", contact_lastname);
+            model.put("email", c_email);
+            model.put("comments", comments);
+
+            return new ModelAndView(model, "contact us.ftl"); // located in src/main/resources/spark/template/freemarker
             }, new FreeMarkerEngine());
         post("/contact", (req, res) -> {
-                Map<String, Object> model = new HashMap<>();
-                contact_firstname= req.queryParams("first_name");
-                contact_lastname= req.queryParams("last_name");
-                c_email= req.queryParams("email");
-                comments= req.queryParams("comments");
+            Map<String, Object> model = new HashMap<>();
+            contact_firstname= req.queryParams("first_name");
+            contact_lastname= req.queryParams("last_name");
+            c_email= req.queryParams("email");
+            comments= req.queryParams("comments");
                 
-                model.put("title", "Contact us: Calling Card");
-                model.put("first_name", contact_firstname);
-                model.put("last_name", contact_lastname);
-                model.put("email", c_email);
-                model.put("comments", comments);
+            model.put("title", "Contact us: Calling Card");
+            model.put("first_name", contact_firstname);
+            model.put("last_name", contact_lastname);
+            model.put("email", c_email);
+            model.put("comments", comments);
 
-                return new ModelAndView(model, "feedback.ftl"); // located in src/main/resources/spark/template/freemarker
+            return new ModelAndView(model, "feedback.ftl"); // located in src/main/resources/spark/template/freemarker
             }, new FreeMarkerEngine());
-    get("/login", (req, res) -> {
+        get("/login", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             
             model.put("title", "Log-in: Calling Card");
@@ -141,30 +287,20 @@ public class Main {
             return new ModelAndView(model, "login.ftl"); // located in src/main/resources/spark/template/freemarker
         }, new FreeMarkerEngine());
 
-     post("/login", (req, res) -> {
+        post("/login", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            boolean confirm1 = false, confirm2 = false;;
-            uname = req.queryParams("username");
-            passwd = req.queryParams("password");
-            for(String u : user){
-                if(u.equals(uname)){
-                    confirm1 = true;
-                }
-            }
-            for(String p : pass){
-                if(p.equals(passwd)){
-                    confirm2 = true;
-                 }
-            }
-            if(confirm1 && confirm2){
+            String uname = req.queryParams("username");
+            String passwd = req.queryParams("password");
+            boolean login = account.login(uname, passwd);
+            if(login){
                 model.put("title", "PHONEBOOK: Calling Card");
-                model.put("address", add);
-                model.put("company", company);
-                model.put("contact", contact);
-                model.put("email", email);
-                model.put("month", month());
-                model.put("date", date());
-                model.put("fullname", fullname);
+                model.put("cards", card.all());
+                active = uname;
+                model.put("username",active);
+                model.put("profile", "/profile");
+                model.put("action", "/");
+                model.put("status", "Log-out");
+                log = true;
                 return new ModelAndView(model, "phonebook.ftl");
             }
             else{
@@ -176,7 +312,7 @@ public class Main {
         },  new FreeMarkerEngine());
 
 
-    get("/signup", (req, res) -> {
+        get("/signup", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             
             model.put("title", "Sign-up: Calling Card");
@@ -184,16 +320,12 @@ public class Main {
             return new ModelAndView(model, "sign-up.ftl"); // located in src/main/resources/spark/template/freemarker
         }, new FreeMarkerEngine());
 
-     post("/signup", (req, res) -> {
+        post("/signup", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            boolean taken = false;
-            uname_signup = req.queryParams("usernamesignup");
-            passwd_signup = req.queryParams("passwordsignup");
-            for(String u : user){
-                if(u.equals(uname_signup)){
-                    taken = true;
-                }
-            }
+            String uname_signup = req.queryParams("usernamesignup");
+            String passwd_signup = req.queryParams("passwordsignup");
+            boolean taken = account.testif(uname_signup);
+        
             if(taken){
                 model.put("message", "Not Available! Username is already taken.");
                 model.put("title", "Log-in: Calling Card");
@@ -201,95 +333,10 @@ public class Main {
             else{
                 model.put("message", "Congratulation! You have successfully created an account.");
                 model.put("title", "Log-in: Calling Card"); 
-                user.add(uname_signup);
-                pass.add(passwd_signup);
+                credentials credential = new credentials(uname_signup, passwd_signup);
+                account.add(credential);
                 }
             return new ModelAndView(model, "sign-up-confirm.ftl"); // located in src/main/resources/spark/template/freemarker
-        },  new FreeMarkerEngine());
-
-    get("/view", (req, res) ->{
-            Map<String, Object> model = new HashMap<>();
-            
-            model.put("title", "VIEW: Calling Card");
-            model.put("address", add);
-            model.put("company", company);
-            model.put("contact", contact);
-            model.put("email", email);
-            model.put("month", month());
-            model.put("date", date());
-            model.put("fullname", fullname);
-
-            return new ModelAndView(model, "list.ftl");
-        },  new FreeMarkerEngine());
-
-    post("/view", (req, res) ->{
-            Map<String, Object> model = new HashMap<>();
-            
-            remove = req.queryParams("remove");
-            testifexist();
-            if(test){
-                delete();
-                
-                model.put("title", "VIEW: Calling Card");
-                model.put("address", add);
-                model.put("company", company);
-                model.put("contact", contact);
-                model.put("email", email);
-                model.put("month", month());
-                model.put("date", date());
-                model.put("fullname", fullname);
-                model.put("message", "You have successfully deleted the Card.");  
-                test = false;
-                return new ModelAndView(model, "list-confirm.ftl");
-            }
-            else{
-                model.put("title", "VIEW: Calling Card");
-                model.put("address", add);
-                model.put("company", company);
-                model.put("contact", contact);
-                model.put("email", email);
-                model.put("month", month());
-                model.put("date", date());
-                model.put("fullname", fullname);
-                model.put("message", "ERROR! The Card doesn't exist.");
-                return new ModelAndView(model, "list-confirm.ftl");
-            }
-        },  new FreeMarkerEngine());
-
-    get("/delete/:value", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            String remove = req.params(":value");
-            testifexist();
-             if(test){
-                delete();
-                model.put("message", "You have successfully deleted the Card.");  
-                test = false;
-            }
-            else{
-                model.put("message", "ERROR! The Card doesn't exist.");
-            }
-            return new ModelAndView(model, "delete.ftl");
-        },  new FreeMarkerEngine());
-
-     get("/delete", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-           
-            return new ModelAndView(model, "remove.ftl");
-        },  new FreeMarkerEngine());
-
-     post("/delete", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            remove = req.queryParams("remove");
-            testifexist();
-            if(test){
-                delete();
-                model.put("message", "You have successfully deleted the Card.");
-                test = false;
-            }
-            else{
-                model.put("message", "ERROR! The Card doesn't exist.");
-            }
-            return new ModelAndView(model, "delete.ftl");
         },  new FreeMarkerEngine());
 
     }
@@ -306,28 +353,17 @@ public class Main {
         int date = cal.get(Calendar.DAY_OF_MONTH);
         return date;
     }
-    public static List delete(){
-        Map<String, Object> model = new HashMap<>();
-        boolean ok = false;
-        String found= "";
-        for(String i: fullname){
-            if(i.equalsIgnoreCase(remove)){
-                ok = true;
-                found = i;
-            }
+    protected static String getSaltString() {
+        String dummy = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 4) {
+            int index = (int) (rnd.nextFloat() * dummy.length());
+            salt.append(dummy.charAt(index));
         }
-        if(ok){
-            fullname.remove(found);
-        }
-        return fullname;
-    }
-    public static boolean testifexist(){
-        for(String i: fullname){
-            if(i.equalsIgnoreCase(remove)){
-                test = true;
-            }
-        }
-        return test;
+        String saltStr = salt.toString();
+        return saltStr;
+
     }
 }
  

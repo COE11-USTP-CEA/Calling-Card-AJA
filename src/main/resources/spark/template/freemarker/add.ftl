@@ -15,7 +15,7 @@
 <div id="header" class="container" style="position: static">
 	<div id="logo">
 		<a href="/"><img src="images/aja_logo.png" height="80" width="150"alt="" class="image image-logo"/></a>
-		<h1 class="logo-h1"><a href="/">CALLING CARD DIRECTORY</a></h1>
+		<h1 class="logo-h1"><a href="/phonebook">CALLING CARD DIRECTORY</a></h1>
 	</div>
 	<div id="menu">
 		<ul>

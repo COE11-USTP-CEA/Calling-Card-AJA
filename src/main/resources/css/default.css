@@ -189,8 +189,8 @@
 	{
 		float: left;
 		position: relative;
-		width: 60px;
-		height: 50px;
+		width: 70px;
+		height: 65px;
 		margin: 4em 1.5em 4em 0em;
 		padding: 10px 0em 0em 0em;
 		background: #0173B2;
@@ -382,7 +382,7 @@
 	#header
 	{
 		position: fixed;
-		padding: 3em 0em;
+	    padding: 3em 0em 4em 0em;
     	background-color: rgba(238, 238, 238, 0.35);
 	}
 
@@ -415,7 +415,7 @@
 	#menu
 	{
 		position: absolute;
-		top: 10px;
+		top: 3px;
 		right: 0;
     	
 	}
@@ -555,7 +555,7 @@
 	#footer-wrapper
 	{
 		overflow: hidden;
-		padding: 5em 0em;
+		padding: 5em 1em;
 		background: rgba(0,0,0,.05);
 	}
 
@@ -672,4 +672,8 @@
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+}
+.logout{
+	float: right;
+	margin-right: 80px;
 }

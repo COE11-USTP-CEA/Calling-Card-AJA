@@ -16,7 +16,7 @@
 <div id="header" class="container" style="position: static">
 	<div id="logo">
 		<a href="/"><img src="images/aja_logo.png" height="80" width="150"alt="" class="image image-logo"/></a>
-		<h1 class="logo-h1"><a href="/">CALLING CARD DIRECTORY</a></h1>
+		<h1 class="logo-h1"><a href="/phonebook">CALLING CARD DIRECTORY</a></h1>
 	</div>
 	<div id="menu">
 		<form action="http://www.google.com/" id="menu" style="margin-right: 10px;">
@@ -48,18 +48,19 @@
 			<button onclick="sortListDir()">Sort</button>
 			<div>
 				<ul class="style3" id="id01">
-          <#list fullname[0..*6]?reverse as names>
-              <li class="first"  style="float: left">
-                <p class="date">${month}<b>${date}</b></p>
-                <h3>${names}</h3>
-                <p>${"Address: "+address}</p>
-                <p>${"Company: "+company}</p>
-                <p>${"Email: "+email}</p>
-                <p>${"Contact: "+contact}</p>
-              </li>
-              <#else>
-                <h1> No Contact available!  click <a href="/add">here </a> to add contact.
-          </#list>
+          <#list cards[0..*6]?reverse as card>
+					<li class="first"  style="float: left">
+						<p class="date">ID: ${card.id}<br>${card.month}<b>${card.date}</b></p>
+						<h3>${card.name}</h3>
+						<p>${"Address: "+card.address}</p>
+            <p>${"Company: "+card.companyname}</p>
+						<p>${"Email: "+card.email}</p>
+						<p>${"Contact: "+card.contact}</p>
+						<button type="button" class="btn btn-danger">Delete</button>
+					</li>
+					  <#else>
+              <h1> No Contact available!  click <a href="/add">here </a> to add contact.
+					</#list>
 				</ul>
 			</div>
 		</div>

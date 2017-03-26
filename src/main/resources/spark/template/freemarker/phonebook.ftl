@@ -17,7 +17,7 @@
 <div id="header" class="container">
 	<div id="logo">
 		<a href="/"><img src="images/aja_logo.png" height="80" width="150"alt="" class="image image-logo"/></a>
-		<h1 class="logo-h1"><a href="/">CALLING CARD DIRECTORY</a></h1>
+		<h1 class="logo-h1"><a href="/phonebook">CALLING CARD DIRECTORY</a></h1>
 	</div>
 	<div id="menu">
 		<form action="http://www.google.com/" id="menu" style="margin-right: 10px;">
@@ -32,6 +32,11 @@
 			<li><a href="/add" accesskey="3" title="">Add Contacts</a></li>
 			<li><a href="/about" accesskey="4" title="">About Us</a></li>
 			<li><a href="/contact" accesskey="5" title="">Contact Us</a></li>
+			<br>
+			<li><a href="${profile}" >${username}</a></li>
+			<li><form onsubmit="return confirm('Do you want to Log-out/in?');" method="post" action="${action}">
+  		<input type="hidden" name="logout" value="true">
+			<button type="submit">${status}</button></form></li>
 		</ul>
 	</div>
 </div>
@@ -84,15 +89,15 @@
 			<button onclick="sortListDir()">Sort</button>
 			<div>
 				<ul class="style3" id="id01">
-					<#list fullname[0..*3]?reverse as names>
+					<#list cards[0..*3]?reverse as card>
 					<li class="first"  style="float: left">
-						<p class="date">${month}<b>${date}</b></p>
-						<h3>${names}</h3>
-						<p>${"Address: "+address}</p>
-            <p>${"Company: "+company}</p>
-						<p>${"Email: "+email}</p>
-						<p>${"Contact: "+contact}</p>
-						<button type="button" class="btn btn-danger">Delete</button>
+						<p class="date">ID: ${card.id}<br>${card.month}<b>${card.date}</b></p>
+						<h3>${card.name}</h3>
+						<p>${"Address: "+card.address}</p>
+            <p>${"Company: "+card.companyname}</p>
+						<p>${"Email: "+card.email}</p>
+						<p>${"Contact: "+card.contact}</p>
+						<button type="button" class="btn btn-danger"><a Onclick="deletewarn()" href="/delete/${card.id}">Delete</a></button>
 					</li>
 					  <#else>
               <h1> No Contact available!  click <a href="/add">here </a> to add contact.
@@ -163,6 +168,22 @@ function sortListDir() {
       }
     }
   }
+}
+</script>
+<script>
+function logoutwarn() {
+var x = confirm("You are about to Log-in/log-out!");
+		if (x)
+          return true;
+      else
+        return false;
+}
+function deletewarn() {
+var x = confirm("Are you sure you want to delete?");
+      if (x)
+          return true;
+      else
+        return false;
 }
 </script>
 

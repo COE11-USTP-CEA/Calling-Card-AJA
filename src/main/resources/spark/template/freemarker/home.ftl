@@ -259,86 +259,6 @@
     </div>         
      <!--JUST SECTION END-->
      <div class="container " >
-         <div class="row ">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h1 class="head-line">Our Clients </h1>
-                <br />
-                </div>
-            </div>
-             <div class="row ">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <hr />
-                 <div class="flexslider carousel">
-          <ul class="slides">
-            <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-  	    		 <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-               <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-               <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-            <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-  	    		 <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-               <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-               <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-              <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-  	    		 <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-               <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-               <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-              <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-  	    		 <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-               <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-               <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-              <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-  	    		 <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-               <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-               <li>
-  	    	    <img src="assets/img/client.jpg" />
-  	    		</li>
-          </ul>
-        </div>
-                <hr />
-                <br />
-                </div>
-            </div>
-         </div>
-     <!--CLIENT SECTION END-->
-     <div class="container " >
              <div class="row">
             <div class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-12 set-div">
                 <div class="just-txt-div text-center">
@@ -349,7 +269,7 @@
                     </p>
                       <a class="btn btn-info btn-lg" href="/login">GET STARTED</a>
                     &nbsp;&nbsp;
-                    <a class="btn btn-success btn-lg" href="/phonebook">SKIP NOW </a>
+                    <a class="btn btn-success btn-lg" href="/phonebook">VIEW SAMPLE </a>
                 </div>
                
                 </div>
