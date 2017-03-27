@@ -16,7 +16,7 @@ public class Main {
     public static String contact_firstname ="";
     public static String contact_lastname ="";
     public static String comments ="" , c_email="", active="Guest";
-    public static boolean log = true;
+    public static boolean log = false;
 
 
     public static void main(String[] args) {
@@ -25,11 +25,13 @@ public class Main {
         cards card = new cards();
         accounts account = new accounts();
             get("/", (req, res) -> {
+                String profile = "#";
                 Map<String, Object> model = new HashMap<>();
                 if(log){
                     String status = "Log-in";
                     if(log){
                         status = "Log-out";
+                        profile = "/profile";
                     }
                     else{
                         active = "Guest";
@@ -38,7 +40,7 @@ public class Main {
                     model.put("title", "Phonebook: Calling Card");
                     model.put("cards", card.all());
                     model.put("username",active);
-                    model.put("profile","/profile");
+                    model.put("profile",profile);
                     model.put("action", "/");
                     model.put("status", "Log-out");
 
@@ -54,10 +56,12 @@ public class Main {
                 Map<String, Object> model = new HashMap<>();
                 String logout = req.queryParams("logout");
                 String status = "Log-in";
+                String profile = "#";
                 if(logout.equals("true")){
                     if(log){
                         log = false;
                         status = "Log-out";
+                        profile = "/profile";
                     }
                     else{
                         log = true;
@@ -72,8 +76,10 @@ public class Main {
             get("/phonebook", (req, res) -> {
                 Map<String, Object> model = new HashMap<>();
                 String status = "Log-in";
+                String profile = "#";
                 if(log){
                     status = "Log-out";
+                    profile = "/profile";
                     }
                 else{
                     active = "Guest";
@@ -82,7 +88,7 @@ public class Main {
                 model.put("title", "Phonebook: Calling Card");
                 model.put("cards", card.all());
                 model.put("username",active);
-                model.put("profile", "#");
+                model.put("profile", profile);
                 model.put("action","/");
                 model.put("status", "Log-in");
                 return new ModelAndView(model, "phonebook.ftl"); // located in src/main/resources/spark/template/freemarker
@@ -91,11 +97,13 @@ public class Main {
                 Map<String, Object> model = new HashMap<>();
                 String remove = req.queryParams("remove");
                 String status = "Log-in";
+                String profile = "#";
                 String logout = req.queryParams("logout");
                 if(logout.equals("true")){
                     if(log){
                         log = false;
                         status = "Log-out";
+                        profile = "/profile";
                     }
                     else{
                         log = true;
@@ -106,7 +114,7 @@ public class Main {
                 model.put("title", "Phonebook: Calling Card");
                 model.put("cards", card.all());
                 model.put("username",active);
-                model.put("profile","/");
+                model.put("profile",profile);
                 model.put("action","/");
                 model.put("status", status);
                 
